@@ -45,6 +45,10 @@ Here is a [working example](LINK) of a Kinect live streaming.
 
 ## Gallery
 
+* Project 1
+* Project 2
+* Project 3
+
 
 ## Contribute
 

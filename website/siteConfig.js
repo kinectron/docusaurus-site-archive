@@ -20,7 +20,6 @@ const siteConfig = {
   tagline: 'A library',
   url: 'https://kinectron.github.io' /* your website url */,
   baseUrl: '/' /* base url for your project */,
-  projectName: 'kinectron',
   headerLinks: [
     {doc: 'doc1', label: 'Docs'},
     {doc: 'doc4', label: 'API'},

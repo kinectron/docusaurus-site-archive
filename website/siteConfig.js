@@ -16,11 +16,11 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'Test Site' /* title for your website */,
-  tagline: 'A website for testing',
+  title: 'Kinectron' /* title for your website */,
+  tagline: 'A library',
   url: 'https://kinectron.github.io' /* your website url */,
-  baseUrl: '/test-site/' /* base url for your project */,
-  projectName: 'test-site',
+  baseUrl: '/' /* base url for your project */,
+  projectName: 'kinectron',
   headerLinks: [
     {doc: 'doc1', label: 'Docs'},
     {doc: 'doc4', label: 'API'},
@@ -50,7 +50,7 @@ const siteConfig = {
   },
   scripts: ['https://buttons.github.io/buttons.js'],
   // You may provide arbitrary config keys to be used as needed by your template.
-  repoUrl: 'https://github.com/facebook/test-site',
+  repoUrl: 'https://github.com/kinectron/kinectron.github.io',
 };
 
 module.exports = siteConfig;

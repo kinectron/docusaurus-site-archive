@@ -13,6 +13,10 @@ to build from the source branch
 cd website
 ```
 
-```shell
+GIT_USER should be an user that has push access to this repository.
+
+this command builds the website and then pushes to the master branch.
+
+```bash
 GIT_USER=montoyamoraga npm run publish-gh-pages
 ```

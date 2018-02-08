@@ -20,3 +20,13 @@ this command builds the website and then pushes to the master branch.
 ```bash
 GIT_USER=montoyamoraga npm run publish-gh-pages
 ```
+
+### notes
+
+on my local repository i did this
+
+```bash
+git push -u origin source
+```
+
+so that everytime i do push, by default it is pushed from origin to the source branch

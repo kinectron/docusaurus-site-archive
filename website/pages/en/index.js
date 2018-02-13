@@ -59,7 +59,7 @@ const Logo = props => (
 const ProjectTitle = props => (
   <h2 className="projectTitle">
     {siteConfig.title}
-    <small>{siteConfig.tagline}</small>
+    <small>{siteConfig.tagline}!!!</small>
   </h2>
 );
 
@@ -196,20 +196,23 @@ const Showcase = props => {
   );
 };
 
+
+// This is the actual page!:
 class Index extends React.Component {
   render() {
     let language = this.props.language || '';
+
+    // <Features />
+    // <FeatureCallout />
+    // <LearnHow />
+    // <TryOut />
+    // <Description />
+    // <Showcase language={language} />
 
     return (
       <div>
         <HomeSplash language={language} />
         <div className="mainContainer">
-          <Features />
-          <FeatureCallout />
-          <LearnHow />
-          <TryOut />
-          <Description />
-          <Showcase language={language} />
         </div>
       </div>
     );

@@ -17,7 +17,7 @@ const users = [
 
 const siteConfig = {
   title: 'Kinectron' /* title for your website */,
-  tagline: 'A library',
+  tagline: 'A fancy library',
   url: '/' /* your website url */,
   baseUrl: '/' /* base url for your project */,
   headerLinks: [

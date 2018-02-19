@@ -21,9 +21,10 @@ const siteConfig = {
   url: 'kinectron.github.io' /* your website url */,
   baseUrl: '/' /* base url for your project */,
   headerLinks: [
-    {doc: 'doc1', label: 'Docs'},
-    {doc: 'doc4', label: 'API'},
-    {page: 'help', label: 'Help'},
+    {doc: 'server', label: 'Server'},
+    {doc: 'api', label: 'API'},
+    {page: 'examples', label: 'Examples'},
+    {page: 'experiments', label: 'Experiments'},
     {blog: true, label: 'Blog'},
   ],
   users,

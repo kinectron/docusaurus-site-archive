@@ -9,7 +9,7 @@
 const users = [
   {
     caption: 'User1',
-    image: '/test-site/img/docusaurus.svg',
+    image: '',
     infoLink: 'https://www.facebook.com',
     pinned: true,
   },
@@ -21,11 +21,10 @@ const siteConfig = {
   url: 'kinectron.github.io' /* your website url */,
   baseUrl: '/' /* base url for your project */,
   headerLinks: [
-    {doc: 'server', label: 'Server'},
-    {doc: 'api', label: 'API'},
+    {doc: 'intro', label: 'Documentation'},
     {doc: 'examples', label: 'Examples'},
     {doc: 'experiments', label: 'Experiments'},
-    {blog: true, label: 'Blog'},
+    // {blog: true, label: 'Blog'},
   ],
   users,
   /* path to images for header/footer */

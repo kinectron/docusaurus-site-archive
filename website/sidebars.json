@@ -1,9 +1,12 @@
 {
   "docs": {
-    "intro": ["intro"],
-    "Docusaurus": ["doc1"],
-    "First Category": ["doc2"],
-    "Second Category": ["doc3"]
+    "About": [
+      "intro"],
+    "Server": ["server",
+      "server2",
+      "server3"],
+    "API": ["api", 
+      "api2"]
   },
   "docs-other": {
     "First Category": ["doc4", "doc5"]

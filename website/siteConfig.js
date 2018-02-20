@@ -23,8 +23,8 @@ const siteConfig = {
   headerLinks: [
     {doc: 'server', label: 'Server'},
     {doc: 'api', label: 'API'},
-    {page: 'examples', label: 'Examples'},
-    {page: 'experiments', label: 'Experiments'},
+    {doc: 'examples', label: 'Examples'},
+    {doc: 'experiments', label: 'Experiments'},
     {blog: true, label: 'Blog'},
   ],
   users,

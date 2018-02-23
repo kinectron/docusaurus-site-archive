@@ -3,7 +3,7 @@
   "localized-strings": {
     "next": "Next",
     "previous": "Previous",
-    "tagline": "A Realtime Kinect Server",
+    "tagline": "A Realtime Peer Server for Kinect 2",
     "api": "Getting Started: API",
     "Getting Started: API": "Getting Started: API",
     "api2": "Using the Kinectron API",

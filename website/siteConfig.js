@@ -17,9 +17,10 @@ const users = [
 
 const siteConfig = {
   title: 'Kinectron' /* title for your website */,
-  tagline: 'A Realtime Kinect Server',
+  tagline: 'A Realtime Peer Server for Kinect 2',
   url: 'kinectron.github.io' /* your website url */,
   baseUrl: '/' /* base url for your project */,
+  noIndex: false,
   headerLinks: [
     {doc: 'intro', label: 'Documentation'},
     {doc: 'examples', label: 'Examples'},

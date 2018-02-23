@@ -1811,6 +1811,10 @@ footer .copyright {
 
 /* your custom css */
 
+footer .fbOpenSource {
+  text-align: center;
+}
+
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
 }
 

@@ -80,15 +80,59 @@ class HomeSplash extends React.Component {
         <div className="inner">
           <ProjectTitle />
           <PromoSection>
-            <Button href="#try">Try It Out</Button>
-            <Button href={docUrl('doc1.html', language)}>Example Link</Button>
-            <Button href={docUrl('doc2.html', language)}>Example Link 2</Button>
+            <Button href={docUrl('server.html', language)}>Getting Started</Button>
+            <Button href={docUrl('examples.html', language)}>Examples</Button>
           </PromoSection>
         </div>
       </SplashContainer>
     );
   }
 }
+
+const Why = props => (
+  <div
+    className="productShowcaseSection paddingTop paddingBottom lightBackground"
+    style={{textAlign: 'center'}}>
+
+    <h2>Bring Your Body Online</h2>
+    {/*<img id="ktronImg" src={`${siteConfig.baseUrl}img/kinectron.png`} /> */}
+    <MarkdownBlock>Kinectron sends Kinect depth, color and skeletal data over a peer network. It can be used in a number of ways.</MarkdownBlock>
+  </div>
+);
+
+const Features = props => (
+  <Block layout="threeColumn">
+    {[
+      {
+        content: 'Receive real-time Kinect streams in the browser, including in creative coding libraries like p5.js and three.js.',
+        image: imgUrl('depth.gif'),
+        imageAlign: 'top',
+        //imageAlign: 'top',
+        title: 'Kinect in Browser',
+      },
+      {
+        content: 'Broadcast Kinect data across local or global networks to one (or many) users.',
+        image: imgUrl('browser.gif'),
+        imageAlign: 'top',
+        title: 'Broadcast Kinect',
+      },
+      {
+        content: 'Combine Kinect streams from more than one locations in one single webpage.',
+        image: imgUrl('twokinect.gif'),
+        imageAlign: 'top',
+        title: 'Combine Kinect Streams',
+      },
+
+
+      // {
+      //   content: 'The content of my second feature',
+      //   image: imgUrl('docusaurus.svg'),
+      //   imageAlign: 'top',
+      //   title: 'Feature Two',
+      // },
+    ]}
+  </Block>
+);
 
 const Block = props => (
   <Container
@@ -99,24 +143,9 @@ const Block = props => (
   </Container>
 );
 
-const Features = props => (
-  <Block layout="fourColumn">
-    {[
-      {
-        content: 'This is the content of my feature',
-        image: imgUrl('docusaurus.svg'),
-        imageAlign: 'top',
-        title: 'Feature One',
-      },
-      {
-        content: 'The content of my second feature',
-        image: imgUrl('docusaurus.svg'),
-        imageAlign: 'top',
-        title: 'Feature Two',
-      },
-    ]}
-  </Block>
-);
+
+
+
 
 const FeatureCallout = props => (
   <div
@@ -213,6 +242,8 @@ class Index extends React.Component {
       <div>
         <HomeSplash language={language} />
         <div className="mainContainer">
+        <Why />
+        <Features />
         </div>
       </div>
     );

@@ -8,7 +8,7 @@
     "API": ["api", 
       "api2"]
   },
-  "docs-other": {
-    "First Category": ["doc4", "doc5"]
+  "examples": {
+    "Examples": ["examples", "example-simple-skeleton"]
   }
 }

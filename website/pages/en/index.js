@@ -95,7 +95,7 @@ const Why = props => (
     style={{textAlign: 'center'}}>
 
     <h2>Bring Your Body Online</h2>
-    {/*<img id="ktronImg" src={`${siteConfig.baseUrl}img/kinectron.png`} /> */}
+    <img id="ktronImg" src={`${siteConfig.baseUrl}img/kinectron.png`} />
     <MarkdownBlock>Kinectron sends Kinect depth, color and skeletal data over a peer network. It can be used in a number of ways.</MarkdownBlock>
   </div>
 );

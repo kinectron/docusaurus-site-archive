@@ -1815,6 +1815,18 @@ footer .fbOpenSource {
   text-align: center;
 }
 
+.imageAlignTop .blockImage {
+    max-width: 150px;
+}
+
+.blockImage img {
+  border-radius: 3px;
+}
+
+#ktronImg {
+  max-width: 50%;
+}
+
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
 }
 

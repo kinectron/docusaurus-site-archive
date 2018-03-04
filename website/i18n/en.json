@@ -12,6 +12,8 @@
     "Kinectron thingy": "Kinectron thingy",
     "doc2": "document number 2",
     "doc3": "This is document number 3",
+    "example-simple-skeleton": "Simple Skeleton Example",
+    "Simple Skeleton Example": "Simple Skeleton Example",
     "doc4": "Other Document",
     "doc5": "Fifth Document",
     "examples": "Some Examples of work",
@@ -29,8 +31,7 @@
     "Documentation": "Documentation",
     "About": "About",
     "Server": "Server",
-    "API": "API",
-    "First Category": "First Category"
+    "API": "API"
   },
   "pages-strings": {
     "Help Translate|recruit community translators for your project": "Help Translate",

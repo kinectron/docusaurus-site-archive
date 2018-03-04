@@ -9,6 +9,6 @@
       "api2"]
   },
   "examples": {
-    "Examples": ["examples", "example-simple-skeleton"]
+    "Examples": ["example-simple-skeleton"]
   }
 }

@@ -23,7 +23,7 @@ const siteConfig = {
   noIndex: false,
   headerLinks: [
     {doc: 'intro', label: 'Documentation'},
-    {doc: 'examples', label: 'Examples'},
+    {doc: 'example-simple-skeleton', label: 'Examples'},
     {doc: 'experiments', label: 'Experiments'},
     // {blog: true, label: 'Blog'},
   ],

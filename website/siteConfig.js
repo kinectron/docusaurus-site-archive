@@ -24,7 +24,7 @@ const siteConfig = {
   headerLinks: [
     {doc: 'intro', label: 'Documentation'},
     {doc: 'example-simple-skeleton', label: 'Examples'},
-    {doc: 'experiments', label: 'Experiments'},
+    {page: 'experiments', label: 'Experiments'},
     // {blog: true, label: 'Blog'},
   ],
   users,

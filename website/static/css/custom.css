@@ -16,6 +16,10 @@ footer .fbOpenSource {
   max-width: 50%;
 }
 
+#experimentsImg img { 
+  max-width: 100%;
+ }
+
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
 }
 

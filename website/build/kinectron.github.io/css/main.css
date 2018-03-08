@@ -1815,8 +1815,16 @@ footer .fbOpenSource {
   text-align: center;
 }
 
-.imageAlignTop .blockImage {
-    max-width: 150px;
+.mainContainer .imageAlignTop .blockImage {
+  max-width: 150px;
+}
+
+.postContainer .imageAlignTop .blockImage {
+  max-width: 100%;
+}
+
+.postContainer div.blockElement {
+  margin-bottom: 50px;
 }
 
 .blockImage img {
@@ -1825,6 +1833,14 @@ footer .fbOpenSource {
 
 #ktronImg {
   max-width: 50%;
+}
+
+#experimentsImg { 
+  max-width: 100%;
+ }
+
+#experiments-intro {
+  margin-bottom: 35px;
 }
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {

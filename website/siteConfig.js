@@ -25,6 +25,7 @@ const siteConfig = {
     {doc: 'intro', label: 'Documentation'},
     {doc: 'example-simple-skeleton', label: 'Examples'},
     {page: 'experiments', label: 'Experiments'},
+    {href: 'https://github.com/kinectron/kinectron', label: 'Code' },    
     // {blog: true, label: 'Blog'},
   ],
   users,

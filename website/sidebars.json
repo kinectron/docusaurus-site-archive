@@ -9,6 +9,6 @@
       "api2"]
   },
   "examples": {
-    "Examples": ["example-simple-skeleton"]
+    "Examples": ["example-simple-skeleton", "examples-p5-editor"]
   }
 }

@@ -6,7 +6,7 @@ sidebar_label: Server Advanced Options
 
 ### Advanced Options
 
-#### Peer Server
+### Peer Server
 Kinectron uses a peer server to broadcast Kinect data to the browser. The peer server can be accessed in three ways:
 
 1. Connect on localhost. By default the application creates a peer connection using peer.js on localhost at port 9001 with "kinectron" as username. This is used to connect on the same computer.
@@ -21,7 +21,7 @@ Server Details: {"host": "myserver.com", "port": "9000", "path": "/", "secure": 
 **Important!** In order to parse correctly, server details must be enclosed within curly brackets and properties must be in double quotes.   
 
 
-#### Set Image Size
+### Set Image Size
 The Kinectron application displays the image for each Kinect feed that is currently running.
 
 The native dimensions of the Kinect2 feeds are:
@@ -33,6 +33,9 @@ Kinectron outputs them at the following dimensions by default:
 Depth: 512 x 424
 
 Change the Kinectron output dimensions by entering the desired width or height and clicking "Submit."
+
+### Set Image Quality 
+Change the image quality of the image feed in real time with this slider. Image quality ranges from 0.1 to 1.0. The default setting is 0.5. The setting affects the following feeds: color, depth, infrared and long exposure infrared. The key, raw depth and RGBD feeds have fixed qualities. All images are in webp image format. 
 
 ### Allow/Block API Calls
 By default the Kinectron application listens for calls from the client-side API. 

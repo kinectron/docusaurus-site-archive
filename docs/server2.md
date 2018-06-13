@@ -14,13 +14,13 @@ To start a frame, click the corresponding button. The frame will start automatic
 
 These are the single frames that are currently available: 
 
-- "Color" returns a jpeg of the color camera.  
-- "Depth" returns a jpeg of the depth camera.  
+- "Color" returns a webp of the color camera.  
+- "Depth" returns a webp of the depth camera.  
 - "Raw Depth" returns an array of values ranging from 0 - 8191. It displays a lossless webp image in the application for testing and feedback.    
 - "Skeleton (Tracked Bodies)" returns all tracked bodies one at a time. It does not differentiate between tracked bodies. For troubleshooting, Kinectron by default will draw the tracked bodies on the application interface, however, only the body data is sent over the peer connection as a JSON object.  
 - "All Bodies" returns an array of all six bodies, tracked or not tracked. For troubleshooting, Kinectron by default will draw the tracked bodies on the application interface, however, only the data is sent over the peer connection as a JSON object.
-- "Infrared" returns a jpeg of the infrared camera.  
-- "Long Exposure Infrared" returns a longer exposure jpeg of the infrared camera.
+- "Infrared" returns a webp of the infrared camera.  
+- "Long Exposure Infrared" returns a longer exposure webp of the infrared camera.
 - "Key" returns a png of the image of the tracked bodies on a transparent background. It has the effect of a green screen.  
 - "RGBD" returns a webp with the color image registered to the depth feed and the depth feed stored in the alpha channel. 
 - "Stop All" stops the current frame.

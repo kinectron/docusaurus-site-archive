@@ -1,0 +1,64 @@
+<html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Key Example · Kinectron</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta property="og:title" content="Key Example · Kinectron"/><meta property="og:type" content="website"/><meta property="og:url" content="kinectron.github.io/index.html"/><meta property="og:description" content="A sketch that overlays the Kinectron key image over a background image. This examples runs from recorded Kinectron Key feed. Created with [p5.js](https://p5js.org/)."/><link rel="shortcut icon" href="/undefined"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/scripts/p5.min.js"></script><script type="text/javascript" src="/scripts/p5.dom.min.js"></script><script type="text/javascript" src="/scripts/p5.sound.min.js"></script><script type="text/javascript" src="/scripts/kinectron.bundle.js"></script><script type="text/javascript" src="/scripts/videoToImage.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><h2 class="headerTitle">Kinectron</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li><a href="/docs/intro.html" target="_self">Documentation</a></li><li><a href="/docs/example-simple-skeleton.html" target="_self">Examples</a></li><li><a href="/en/experiments.html" target="_self">Experiments</a></li><li><a href="https://github.com/kinectron/kinectron" target="_self">Code</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Examples</span></h2></div><div class="navGroups"><div class="navGroup navGroupActive"><h3>Examples</h3><ul><li class="navListItem"><a class="navItem" href="/docs/example-simple-skeleton.html">Simple Skeleton Example</a></li><li class="navListItem"><a class="navItem" href="/docs/example-two-player-joints.html">Two Player Joint Detection</a></li><li class="navListItem navListItemActive"><a class="navItem navItemActive" href="/docs/example-key.html">Key Example</a></li><li class="navListItem"><a class="navItem" href="/docs/examples-p5-editor.html">All p5 Examples</a></li></ul></div></div></section></div><script>
+          var toggler = document.getElementById('navToggler');
+          var nav = document.getElementById('docsNav');
+          toggler.onclick = function() {
+            nav.classList.toggle('docsSliderActive');
+          };
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1>Key Example</h1></header><article><div><span><p>A sketch that overlays the Kinectron key image over a background image. This examples runs from recorded Kinectron Key feed. Created with <a href="https://p5js.org/">p5.js</a>.</p>
+<p>Try it with your live Kinectron IP address in the p5.js online editor <a href="http://alpha.editor.p5js.org/lisajamhoury/sketches/r13uym_MM">here</a>. The code with recorded data is available in the <a href="https://github.com/kinectron/kinectron-examples/tree/master/examples_p5js/record_key">Kinectron Examples repository on github</a>.</p>
+<h2><a class="anchor" aria-hidden="true" name="demo"></a><a href="#demo" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Demo</h2>
+<div id="p5-sketch" ></div>
+<script src="assets/scripts/example-key.js"></script>
+<h2><a class="anchor" aria-hidden="true" name="code"></a><a href="#code" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Code</h2>
+<pre><code class="hljs css javascript">
+<span class="hljs-comment">// declare IP address, fill in the IP address from your server</span>
+<span class="hljs-keyword">let</span> kinectronIpAddress = <span class="hljs-string">"10.0.1.12"</span>;
+
+<span class="hljs-comment">// declare kinectron</span>
+<span class="hljs-keyword">let</span> kinectron = <span class="hljs-literal">null</span>;
+
+<span class="hljs-comment">// hold beach image</span>
+<span class="hljs-keyword">let</span> beach;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">preload</span>(<span class="hljs-params"></span>) </span>{
+  beach = loadImage(<span class="hljs-string">"./assets/beach.png"</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setup</span>(<span class="hljs-params"></span>) </span>{
+  createCanvas(<span class="hljs-number">640</span>, <span class="hljs-number">426</span>);
+  background(<span class="hljs-number">255</span>);
+
+  initKinectron();
+
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">initKinectron</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// Define and create an instance of kinectron</span>
+  kinectron = <span class="hljs-keyword">new</span> Kinectron(kinectronIpAddress);
+
+  <span class="hljs-comment">// Connect with application over peer</span>
+  kinectron.makeConnection();
+
+  <span class="hljs-comment">// Start the key camera and define a callback for when an image is received </span>
+  kinectron.startKey(goToBeach);
+
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">draw</span>(<span class="hljs-params"></span>) </span>{
+
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">goToBeach</span>(<span class="hljs-params">img</span>) </span>{
+  <span class="hljs-comment">// once a kinectron image is loaded</span>
+  loadImage(img.src, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">loadedImage</span>) </span>{
+
+    <span class="hljs-comment">//draw the beach image, then the kinectron key image</span>
+    image(beach, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+    image(loadedImage, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+  });
+}
+
+
+
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="example-two-player-joints.html">← Two Player Single Joint Detection</a><a class="docs-next button" href="examples-p5-editor.html">p5.js Examples in the Online Editor →</a></div></div></div></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"></a><div><h5>Docs</h5><a href="/docs/en/intro.html">About</a><a href="/docs/en/server.html">Getting Started: Server</a><a href="/docs/en/api.html">Getting Started: API</a></div><div><h5>Community</h5><a href="/en/experiments.html">User Showcase</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/kinectron/kinectron">GitHub</a><a class="github-button" href="https://github.com/kinectron/kinectron" data-icon="octicon-star" data-count-href="/kinectron/kinectron/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://tisch.nyu.edu/itp" target="_blank" class="fbOpenSource"><img src="/img/itp_logo.png" alt="ITP Home Page" width="85" height="22"/></a><section class="copyright">This project is currently maintained at <a href="https://tisch.nyu.edu/itp" target="_blank">NYU ITP</a>.</section></footer></div></body></html>

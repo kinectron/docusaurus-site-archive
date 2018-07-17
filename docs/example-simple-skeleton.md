@@ -14,40 +14,51 @@ To use live Kinectron data, just change liveData to true and enter your Kinectro
 <iframe width="500px" height="500px" src="https://alpha.editor.p5js.org/embed/SkJm1w58M"></iframe>  
 </div>
 
+<!-- <div id="p5-sketch"></div>
+<script src="assets/example-simple-skeleton.js"></script> -->
+
+
 
 ## Code 
 
 ```javascript
 
-// Set to true if using live kinectron data
-var liveData = false;
+// set to true if using live kinectron data
+let liveData = false;
 
-// Fill in Kinectron IP Address here ie. "127.16.231.33"
-var kinectronIpAddress = ""; 
+// fill in kinectron ip address here ie. "127.16.231.33"
+let kinectronIpAddress = ""; 
 
-// p5 canvas 
-var myCanvas = null;
-
-// Declare kinectron 
-var kinectron = null;
+// declare kinectron 
+let kinectron = null;
 
 // drawHand variables
-var start = 30;
-var target = 100;
-var diameter = start;
-var light = 255;
-var dark = 100;
-var hueValue = light;
-var lerpAmt = 0.3;
-var state = 'ascending';
+let start = 30;
+let target = 100;
+let diameter = start;
+let light = 255;
+let dark = 100;
+let hueValue = light;
+let lerpAmt = 0.3;
+let state = 'ascending';
 
 // recorded data variables
-var sentTime = Date.now();
-var currentFrame = 0;
+let sentTime = Date.now();
+let currentFrame = 0;
+let recorded_skeleton;
+let recorded_data_file = "./recorded_skeleton.json";
 
+
+function preload() {
+  
+  if (!liveData) {
+    recorded_skeleton = loadJSON(recorded_data_file);
+  }
+
+}
 
 function setup() {
-  myCanvas = createCanvas(500, 500);
+  createCanvas(500, 500);
   background(0);
   noStroke();
 
@@ -68,7 +79,7 @@ function loopRecordedData() {
     bodyTracked(recorded_skeleton[currentFrame])
     sentTime = Date.now();
 
-    if (currentFrame < recorded_skeleton.length-1) {
+    if (currentFrame < Object.keys(recorded_skeleton).length-1) {
       currentFrame++;
     } else {
       currentFrame = 0;
@@ -78,13 +89,13 @@ function loopRecordedData() {
 }
 
 function initKinectron() {
-  // Define and create an instance of kinectron
+  // define and create an instance of kinectron
   kinectron = new Kinectron(kinectronIpAddress);
 
-  // Connect with application over peer
+  // connect with application over peer
   kinectron.makeConnection();
 
-  // Request all tracked bodies and pass data to your callback
+  // request all tracked bodies and pass data to your callback
   kinectron.startTrackedBodies(bodyTracked);
 
 }
@@ -93,23 +104,23 @@ function initKinectron() {
 function bodyTracked(body) {
   background(0, 20);
 
-  var hands = [];
+  let hands = [];
 
-  // Get all the joints off the tracked body and do something with them
-  for(var jointType in body.joints) {
+  // get all the joints off the tracked body and do something with them
+  for(let jointType in body.joints) {
     joint = body.joints[jointType];
 
     drawJoint(joint);
 
-    // Get the hands off the tracked body and do somethign with them
+    // get the hands off the tracked body and do somethign with them
     
-    // Find right hand 
+    // find right hand 
     if (jointType == 11) {
       hands.rightHand = joint;
       hands.rightHandState = translateHandState(body.rightHandState);
     }
 
-    // Find left hand
+    // find left hand
     if (jointType == 7) {
       hands.leftHand = joint;
       hands.leftHandState = translateHandState(body.leftHandState);
@@ -121,20 +132,20 @@ function bodyTracked(body) {
 
 }
 
-// Draw skeleton
+// draw skeleton
 function drawJoint(joint) {
   fill(100);
 
-  // Kinect location data needs to be normalized to canvas size
-  ellipse(joint.depthX * myCanvas.width, joint.depthY * myCanvas.height, 15, 15);
+  // kinect location data needs to be normalized to canvas size
+  ellipse(joint.depthX * width, joint.depthY * height, 15, 15);
 
   fill(200);
 
-  // Kinect location data needs to be normalized to canvas size
-  ellipse(joint.depthX * myCanvas.width, joint.depthY * myCanvas.height, 3, 3);
+  // kinect location data needs to be normalized to canvas size
+  ellipse(joint.depthX * width, joint.depthY * height, 3, 3);
 }
 
-// Make handstate more readable
+// make handstate more readable
 function translateHandState(handState) {
   switch (handState) {
     case 0:
@@ -155,22 +166,21 @@ function translateHandState(handState) {
 }
 
 
-// Draw hands
+// draw hands
 function drawHands(hands) {
 
-  //check if hands are touching 
+  // check if hands are touching 
   if ((Math.abs(hands.leftHand.depthX - hands.rightHand.depthX) < 0.01) && (Math.abs(hands.leftHand.depthY - hands.rightHand.depthY) < 0.01)) {
     hands.leftHandState = 'clapping';
     hands.rightHandState = 'clapping';
   }
 
   // draw hand states
-  
   updateHandState(hands.leftHandState, hands.leftHand);
   updateHandState(hands.rightHandState, hands.rightHand);
 }
 
-// Find out state of hands
+// find out state of hands
 function updateHandState(handState, hand) {
 
   switch (handState) {
@@ -186,13 +196,13 @@ function updateHandState(handState, hand) {
       drawHand(hand, 0, 255);
       break;
 
-      // Created new state for clapping
+      // create new state for clapping
     case 'clapping':
       drawHand(hand, 1, 'red');
   }
 }
 
-// Draw the hands based on their state
+// draw the hands based on their state
 function drawHand(hand, handState, color) {
 
   if (handState === 1) {
@@ -216,7 +226,7 @@ function drawHand(hand, handState, color) {
   fill(color);
 
   // Kinect location needs to be normalized to canvas size
-  ellipse(hand.depthX * myCanvas.width, hand.depthY * myCanvas.height, diameter, diameter);
+  ellipse(hand.depthX * width, hand.depthY * height, diameter, diameter);
 }
 
 ```

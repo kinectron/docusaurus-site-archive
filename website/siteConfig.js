@@ -49,7 +49,14 @@ const siteConfig = {
     // Highlight.js theme to use for syntax highlighting in code blocks
     theme: 'default',
   },
-  scripts: ['https://buttons.github.io/buttons.js'],
+  scripts: [
+    'https://buttons.github.io/buttons.js',
+    '/scripts/p5.min.js',
+    '/scripts/p5.dom.min.js',
+    '/scripts/p5.sound.min.js',
+    '/scripts/kinectron.bundle.js',
+    '/scripts/videoToImage.js',
+    ],
   // You may provide arbitrary config keys to be used as needed by your template.
   repoUrl: 'https://github.com/kinectron/kinectron.github.io',
   projectUrl: 'https://github.com/kinectron/kinectron',

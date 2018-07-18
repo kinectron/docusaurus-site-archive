@@ -25,7 +25,6 @@ let recorded_data_file = "./assets/data/recorded_skeleton.json";
 
 
 function preload() {
-  console.log('p');
   
   if (!liveData) {
     recorded_skeleton = loadJSON(recorded_data_file, "json");

@@ -4,19 +4,14 @@ title: Simple Skeleton Example
 sidebar_label: Simple Skeleton Example
 ---
 
-A simple project that plays back and draws recorded Kinectron skeleton data. Created with [p5.js](https://p5js.org/) in the [p5.js online editor](http://alpha.editor.p5js.org/). 
+A simple project that plays back and draws recorded Kinectron skeleton data. Created with [p5.js](https://p5js.org/). 
 
-To use live Kinectron data, just change liveData to true and enter your Kinectron IP address. Test it in the online editor [here](http://alpha.editor.p5js.org/lisajamhoury/sketches/SkJm1w58M).
+To use live Kinectron data, just change liveData to true and enter your Kinectron IP address. Test it in the p5.js online editor [here](http://alpha.editor.p5js.org/lisajamhoury/sketches/SkJm1w58M).
 
 ## Demo 
 
-<div>
-<iframe width="500px" height="500px" src="https://alpha.editor.p5js.org/embed/SkJm1w58M"></iframe>  
-</div>
-
-<!-- <div id="p5-sketch"></div>
-<script src="assets/example-simple-skeleton.js"></script> -->
-
+<div id="p5-sketch"></div>
+<script src="assets/scripts/example-simple-skeleton.js"></script>
 
 
 ## Code 

@@ -13,7 +13,7 @@ In this section we'll take a look at how to use the Kinectron server. The Kinect
 ### 1. Kinectron Application Installation
 You will need to be running Windows 8 or Windows 10 for the app to run correctly. If you are running Windows 8, you will also need to download and install the [Official Kinect2 SDK](https://www.microsoft.com/en-us/download/details.aspx?id=44561) before running Kinectron.
 
-Download and unzip [preview release 0.0.5.1](https://github.com/kinectron/kinectron/releases/tag/0.0.5.1). Make sure you download the file that is labeled "Kinectron.xxxx.zip," not the files labeled "Source Code." 
+Download and unzip [preview release 0.2.0](https://github.com/kinectron/kinectron/releases/tag/0.2.0). Make sure you download the file that is labeled "Kinectron.xxxx.zip," not the files labeled "Source Code." 
 
 Once the file downloads, unzip the folder directly at the C:\ drive level to avoid an error with Windows filename size limitations.
 

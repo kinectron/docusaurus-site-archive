@@ -9,7 +9,7 @@ sidebar_label: Kinectron API
 Include the library in the head of your document.
 
 ```
-<script src="https://itp.nyu.edu/kinectron/kinectron.bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/kinectron/kinectron@0.2.0/client/dist/kinectron-client.js"></script>
 ```
 
 ### Create an Instance of Kinectron

@@ -1,30 +1,29 @@
-<html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Two Player Single Joint Detection · Kinectron</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta property="og:title" content="Two Player Single Joint Detection · Kinectron"/><meta property="og:type" content="website"/><meta property="og:url" content="kinectron.github.io/index.html"/><meta property="og:description" content="A sketch that tracks the right hand of up to six players. The recorded data shows right hands of two players. Created with [p5.js](https://p5js.org/) in the [p5.js online editor](http://alpha.editor.p5js.org/). "/><link rel="shortcut icon" href="/undefined"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/scripts/p5.min.js"></script><script type="text/javascript" src="/scripts/p5.dom.min.js"></script><script type="text/javascript" src="/scripts/p5.sound.min.js"></script><script type="text/javascript" src="/scripts/kinectron.bundle.js"></script><script type="text/javascript" src="/scripts/videoToImage.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><h2 class="headerTitle">Kinectron</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li><a href="/docs/intro.html" target="_self">Documentation</a></li><li><a href="/docs/example-simple-skeleton.html" target="_self">Examples</a></li><li><a href="/en/experiments.html" target="_self">Experiments</a></li><li><a href="https://github.com/kinectron/kinectron" target="_self">Code</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Examples</span></h2></div><div class="navGroups"><div class="navGroup navGroupActive"><h3>Examples</h3><ul><li class="navListItem"><a class="navItem" href="/docs/example-simple-skeleton.html">Simple Skeleton Example</a></li><li class="navListItem navListItemActive"><a class="navItem navItemActive" href="/docs/example-two-player-joints.html">Two Player Joint Detection</a></li><li class="navListItem"><a class="navItem" href="/docs/example-key.html">Key Example</a></li><li class="navListItem"><a class="navItem" href="/docs/examples-p5-editor.html">All p5 Examples</a></li></ul></div></div></section></div><script>
+<html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Two Player Single Joint Detection (Windows Kinect) · Kinectron</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta property="og:title" content="Two Player Single Joint Detection (Windows Kinect) · Kinectron"/><meta property="og:type" content="website"/><meta property="og:url" content="kinectron.github.io/index.html"/><meta property="og:description" content="A sketch that tracks the right hand of up to six players. The recorded data shows right hands of two players. Created with [p5.js](https://p5js.org/) in the [p5.js online editor](http://alpha.editor.p5js.org/)."/><link rel="shortcut icon" href="/undefined"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/scripts/p5.min.js"></script><script type="text/javascript" src="/scripts/p5.dom.min.js"></script><script type="text/javascript" src="/scripts/p5.sound.min.js"></script><script type="text/javascript" src="/scripts/kinectron.bundle.js"></script><script type="text/javascript" src="/scripts/videoToImage.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><h2 class="headerTitle">Kinectron</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li><a href="/docs/intro.html" target="_self">Documentation</a></li><li><a href="/docs/example-simple-skeleton.html" target="_self">Examples</a></li><li><a href="/en/experiments.html" target="_self">Experiments</a></li><li><a href="https://github.com/kinectron/kinectron" target="_self">Code</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Examples</span></h2></div><div class="navGroups"><div class="navGroup navGroupActive"><h3>Examples</h3><ul><li class="navListItem"><a class="navItem" href="/docs/example-simple-skeleton.html">Simple Skeleton Example (Windows Kinect)</a></li><li class="navListItem navListItemActive"><a class="navItem navItemActive" href="/docs/example-two-player-joints.html">Two Player Joint Detection (Windows Kinect)</a></li><li class="navListItem"><a class="navItem" href="/docs/example-key.html">Key Example (Windows Kinect)</a></li><li class="navListItem"><a class="navItem" href="/docs/examples-p5-editor.html">All p5 Examples (Windows Kinect)</a></li><li class="navListItem"><a class="navItem" href="/docs/examples-azure.html">Kinect Azure Examples</a></li></ul></div></div></section></div><script>
           var toggler = document.getElementById('navToggler');
           var nav = document.getElementById('docsNav');
           toggler.onclick = function() {
             nav.classList.toggle('docsSliderActive');
           };
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1>Two Player Single Joint Detection</h1></header><article><div><span><p>A sketch that tracks the right hand of up to six players. The recorded data shows right hands of two players. Created with <a href="https://p5js.org/">p5.js</a> in the <a href="http://alpha.editor.p5js.org/">p5.js online editor</a>.</p>
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1>Two Player Single Joint Detection (Windows Kinect)</h1></header><article><div><span><p>A sketch that tracks the right hand of up to six players. The recorded data shows right hands of two players. Created with <a href="https://p5js.org/">p5.js</a> in the <a href="http://alpha.editor.p5js.org/">p5.js online editor</a>.</p>
 <p>To use live Kinectron data, just change liveData to true and enter your Kinectron IP address. Test it in the online editor <a href="http://alpha.editor.p5js.org/lisajamhoury/sketches/SyseCwsQ7">here</a>.</p>
 <h2><a class="anchor" aria-hidden="true" name="demo"></a><a href="#demo" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Demo</h2>
 <!-- <div>
-<iframe width="500px" height="500px"  src="https://alpha.editor.p5js.org/embed/SyseCwsQ7"></iframe> 
+<iframe width="500px" height="500px"  src="https://alpha.editor.p5js.org/embed/SyseCwsQ7"></iframe>
 </div>
  -->
  <div id="p5-sketch"></div>
  <script src="assets/scripts/example-two-player-joints.js"></script>
 <h2><a class="anchor" aria-hidden="true" name="code"></a><a href="#code" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Code</h2>
-<pre><code class="hljs css javascript">
-<span class="hljs-comment">// Set to true if using live kinectron data</span>
+<pre><code class="hljs css javascript"><span class="hljs-comment">// Set to true if using live kinectron data</span>
 <span class="hljs-keyword">let</span> liveData = <span class="hljs-literal">false</span>;
 
 <span class="hljs-comment">// fill in kinectron ip address here, by replacing null with an ip address</span>
-<span class="hljs-comment">// your kinectron ip address is highligted in orange at the top of your kinectron server  </span>
+<span class="hljs-comment">// your kinectron ip address is highligted in orange at the top of your kinectron server</span>
 <span class="hljs-comment">// the format is four numbers, separated by a period, everything in between quotes</span>
 <span class="hljs-comment">// the numbers go from 0 to 255</span>
 <span class="hljs-comment">// example</span>
 <span class="hljs-comment">// let kinectronIpAddress = "127.16.231.33"</span>
-<span class="hljs-keyword">let</span> kinectronIpAddress = <span class="hljs-literal">null</span>; 
+<span class="hljs-keyword">let</span> kinectronIpAddress = <span class="hljs-literal">null</span>;
 
 <span class="hljs-comment">// declare kinectron</span>
 <span class="hljs-keyword">let</span> kinectron = <span class="hljs-literal">null</span>;
@@ -39,17 +38,15 @@
 <span class="hljs-keyword">let</span> recorded_skeleton;
 
 <span class="hljs-comment">// the filename and path of the recorded data file</span>
-<span class="hljs-keyword">let</span> recorded_data_file = <span class="hljs-string">"recorded_joints.json"</span>; 
+<span class="hljs-keyword">let</span> recorded_data_file = <span class="hljs-string">"recorded_joints.json"</span>;
 
 <span class="hljs-keyword">let</span> ballWidth = <span class="hljs-number">50</span>;
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">preload</span>(<span class="hljs-params"></span>) </span>{
-
-  <span class="hljs-comment">// loadJSON must be used in preload  </span>
+  <span class="hljs-comment">// loadJSON must be used in preload</span>
   <span class="hljs-keyword">if</span> (!liveData) {
     recorded_skeleton = loadJSON(recorded_data_file);
   }
-
 }
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setup</span>(<span class="hljs-params"></span>) </span>{
@@ -59,41 +56,35 @@
 
   <span class="hljs-comment">// if using live data, initialize kinectron</span>
   <span class="hljs-keyword">if</span> (liveData) initKinectron();
-
 }
-
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">draw</span>(<span class="hljs-params"></span>) </span>{
-
   <span class="hljs-comment">// if using recording data, loop the recorded data</span>
   <span class="hljs-keyword">if</span> (!liveData) loopRecordedData();
-
 }
 
-
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">initKinectron</span>(<span class="hljs-params"></span>) </span>{
-
   <span class="hljs-comment">// define and create an instance of kinectron</span>
-  kinectron = <span class="hljs-keyword">new</span> Kinectron(kinectronIpAddress);  
+  kinectron = <span class="hljs-keyword">new</span> Kinectron(kinectronIpAddress);
+
+  <span class="hljs-comment">// Set kinect type to "azure" or "windows"</span>
+  kinectron.setKinectType(<span class="hljs-string">"windows"</span>);
 
   <span class="hljs-comment">// connect with application over peer</span>
   kinectron.makeConnection();
 
   <span class="hljs-comment">// request right hand and set callback for received hand</span>
   kinectron.startTrackedJoint(kinectron.HANDRIGHT, drawRightHand);
-
 }
 
-
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loopRecordedData</span>(<span class="hljs-params"></span>) </span>{
-  
-  <span class="hljs-comment">// send data every 20 seconds </span>
+  <span class="hljs-comment">// send data every 20 seconds</span>
   <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Date</span>.now() &gt; sentTime + <span class="hljs-number">20</span>) {
-    drawRightHand(recorded_skeleton[currentFrame])
+    drawRightHand(recorded_skeleton[currentFrame]);
     sentTime = <span class="hljs-built_in">Date</span>.now();
 
     <span class="hljs-comment">// Object.keys needed here to return array length of JSON object</span>
-    <span class="hljs-keyword">if</span> (currentFrame &lt; <span class="hljs-built_in">Object</span>.keys(recorded_skeleton).length<span class="hljs-number">-1</span>) {
+    <span class="hljs-keyword">if</span> (currentFrame &lt; <span class="hljs-built_in">Object</span>.keys(recorded_skeleton).length - <span class="hljs-number">1</span>) {
       currentFrame++;
     } <span class="hljs-keyword">else</span> {
       currentFrame = <span class="hljs-number">0</span>;
@@ -101,9 +92,7 @@
   }
 }
 
-
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">drawRightHand</span>(<span class="hljs-params">hand</span>) </span>{
-
   <span class="hljs-comment">// Use handColors object to store unique colors for each hand</span>
 
   <span class="hljs-comment">// If we already have a color for incoming hand</span>
@@ -133,16 +122,23 @@
     fill(trackedHand.color[<span class="hljs-number">0</span>], trackedHand.color[<span class="hljs-number">1</span>], trackedHand.color[<span class="hljs-number">2</span>]);
 
     <span class="hljs-comment">// draw label with tracking id to player's hand location</span>
-    text(<span class="hljs-string">`
+    text(
+      <span class="hljs-string">`
     Right hand of player
     with tracking Id:
-    `</span> + trackedHand.trackingId, (trackedHand.depthX * width) - ballWidth*<span class="hljs-number">3</span>, trackedHand.depthY * height);
+    `</span> + trackedHand.trackingId,
+      trackedHand.depthX * width - ballWidth * <span class="hljs-number">3</span>,
+      trackedHand.depthY * height
+    );
 
     <span class="hljs-comment">// draw ellipse at player's hand location</span>
-    ellipse(trackedHand.depthX * width, trackedHand.depthY * height, ballWidth, ballWidth);
+    ellipse(
+      trackedHand.depthX * width,
+      trackedHand.depthY * height,
+      ballWidth,
+      ballWidth
+    );
   }
 }
-
-
 </code></pre>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="example-simple-skeleton.html">← Simple Skeleton Example</a><a class="docs-next button" href="example-key.html">Key Example →</a></div></div></div></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"></a><div><h5>Docs</h5><a href="/docs/en/intro.html">About</a><a href="/docs/en/server.html">Getting Started: Server</a><a href="/docs/en/api.html">Getting Started: API</a></div><div><h5>Community</h5><a href="/en/experiments.html">User Showcase</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/kinectron/kinectron">GitHub</a><a class="github-button" href="https://github.com/kinectron/kinectron" data-icon="octicon-star" data-count-href="/kinectron/kinectron/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://tisch.nyu.edu/itp" target="_blank" class="fbOpenSource"><img src="/img/itp_logo.png" alt="ITP Home Page" width="85" height="22"/></a><section class="copyright">This project is currently maintained at <a href="https://tisch.nyu.edu/itp" target="_blank">NYU ITP</a>.</section></footer></div></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="example-simple-skeleton.html">← Simple Skeleton Example (Windows Kinect)</a><a class="docs-next button" href="example-key.html">Key Example (Windows Kinect) →</a></div></div></div></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"></a><div><h5>Docs</h5><a href="/docs/en/intro.html">About</a><a href="/docs/en/server.html">Getting Started: Server</a><a href="/docs/en/api.html">Getting Started: API</a></div><div><h5>Community</h5><a href="/en/experiments.html">User Showcase</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/kinectron/kinectron">GitHub</a><a class="github-button" href="https://github.com/kinectron/kinectron" data-icon="octicon-star" data-count-href="/kinectron/kinectron/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://tisch.nyu.edu/itp" target="_blank" class="fbOpenSource"><img src="/img/itp_logo.png" alt="ITP Home Page" width="85" height="22"/></a><section class="copyright">This project is currently maintained at <a href="https://tisch.nyu.edu/itp" target="_blank">NYU ITP</a>.</section></footer></div></body></html>

@@ -1,30 +1,28 @@
 ---
 id: example-simple-skeleton
-title: Simple Skeleton Example
-sidebar_label: Simple Skeleton Example
+title: Simple Skeleton Example (Windows Kinect)
+sidebar_label: Simple Skeleton Example (Windows Kinect)
 ---
 
-A simple project that plays back and draws recorded Kinectron skeleton data. Created with [p5.js](https://p5js.org/). 
+A simple project that plays back and draws recorded Kinectron skeleton data. Created with [p5.js](https://p5js.org/).
 
 To use live Kinectron data, just change liveData to true and enter your Kinectron IP address. Test it in the p5.js online editor [here](http://alpha.editor.p5js.org/lisajamhoury/sketches/SkJm1w58M).
 
-## Demo 
+## Demo
 
 <div id="p5-sketch"></div>
 <script src="assets/scripts/example-simple-skeleton.js"></script>
 
-
-## Code 
+## Code
 
 ```javascript
-
 // set to true if using live kinectron data
 let liveData = false;
 
 // fill in kinectron ip address here ie. "127.16.231.33"
-let kinectronIpAddress = ""; 
+let kinectronIpAddress = "";
 
-// declare kinectron 
+// declare kinectron
 let kinectron = null;
 
 // drawHand variables
@@ -35,7 +33,7 @@ let light = 255;
 let dark = 100;
 let hueValue = light;
 let lerpAmt = 0.3;
-let state = 'ascending';
+let state = "ascending";
 
 // recorded data variables
 let sentTime = Date.now();
@@ -43,13 +41,10 @@ let currentFrame = 0;
 let recorded_skeleton;
 let recorded_data_file = "./recorded_skeleton.json";
 
-
 function preload() {
-  
   if (!liveData) {
     recorded_skeleton = loadJSON(recorded_data_file);
   }
-
 }
 
 function setup() {
@@ -60,41 +55,37 @@ function setup() {
   if (liveData) initKinectron();
 }
 
-
 function draw() {
-
   if (!liveData) loopRecordedData();
 }
 
-
 function loopRecordedData() {
-  
-  // send data every 20 seconds 
+  // send data every 20 seconds
   if (Date.now() > sentTime + 20) {
-    bodyTracked(recorded_skeleton[currentFrame])
+    bodyTracked(recorded_skeleton[currentFrame]);
     sentTime = Date.now();
 
-    if (currentFrame < Object.keys(recorded_skeleton).length-1) {
+    if (currentFrame < Object.keys(recorded_skeleton).length - 1) {
       currentFrame++;
     } else {
       currentFrame = 0;
     }
   }
-
 }
 
 function initKinectron() {
   // define and create an instance of kinectron
   kinectron = new Kinectron(kinectronIpAddress);
 
+  // Set kinect type to "azure" or "windows"
+  kinectron.setKinectType("windows");
+
   // connect with application over peer
   kinectron.makeConnection();
 
   // request all tracked bodies and pass data to your callback
   kinectron.startTrackedBodies(bodyTracked);
-
 }
-
 
 function bodyTracked(body) {
   background(0, 20);
@@ -102,14 +93,14 @@ function bodyTracked(body) {
   let hands = [];
 
   // get all the joints off the tracked body and do something with them
-  for(let jointType in body.joints) {
+  for (let jointType in body.joints) {
     joint = body.joints[jointType];
 
     drawJoint(joint);
 
     // get the hands off the tracked body and do somethign with them
-    
-    // find right hand 
+
+    // find right hand
     if (jointType == 11) {
       hands.rightHand = joint;
       hands.rightHandState = translateHandState(body.rightHandState);
@@ -120,11 +111,9 @@ function bodyTracked(body) {
       hands.leftHand = joint;
       hands.leftHandState = translateHandState(body.leftHandState);
     }
-
   }
 
   drawHands(hands);
-
 }
 
 // draw skeleton
@@ -144,30 +133,31 @@ function drawJoint(joint) {
 function translateHandState(handState) {
   switch (handState) {
     case 0:
-      return 'unknown';
+      return "unknown";
 
     case 1:
-      return 'notTracked';
+      return "notTracked";
 
     case 2:
-      return 'open';
+      return "open";
 
     case 3:
-      return 'closed';
+      return "closed";
 
     case 4:
-      return 'lasso';
+      return "lasso";
   }
 }
 
-
 // draw hands
 function drawHands(hands) {
-
-  // check if hands are touching 
-  if ((Math.abs(hands.leftHand.depthX - hands.rightHand.depthX) < 0.01) && (Math.abs(hands.leftHand.depthY - hands.rightHand.depthY) < 0.01)) {
-    hands.leftHandState = 'clapping';
-    hands.rightHandState = 'clapping';
+  // check if hands are touching
+  if (
+    Math.abs(hands.leftHand.depthX - hands.rightHand.depthX) < 0.01 &&
+    Math.abs(hands.leftHand.depthY - hands.rightHand.depthY) < 0.01
+  ) {
+    hands.leftHandState = "clapping";
+    hands.rightHandState = "clapping";
   }
 
   // draw hand states
@@ -177,43 +167,41 @@ function drawHands(hands) {
 
 // find out state of hands
 function updateHandState(handState, hand) {
-
   switch (handState) {
-    case 'closed':
+    case "closed":
       drawHand(hand, 1, 255);
       break;
 
-    case 'open':
+    case "open":
       drawHand(hand, 0, 255);
       break;
 
-    case 'lasso':
+    case "lasso":
       drawHand(hand, 0, 255);
       break;
 
-      // create new state for clapping
-    case 'clapping':
-      drawHand(hand, 1, 'red');
+    // create new state for clapping
+    case "clapping":
+      drawHand(hand, 1, "red");
   }
 }
 
 // draw the hands based on their state
 function drawHand(hand, handState, color) {
-
   if (handState === 1) {
-    state = 'ascending';
+    state = "ascending";
   }
 
   if (handState === 0) {
-    state = 'descending';
+    state = "descending";
   }
 
-  if (state == 'ascending') {
+  if (state == "ascending") {
     diameter = lerp(diameter, target, lerpAmt);
     hueValue = lerp(hueValue, dark, lerpAmt);
   }
 
-  if (state == 'descending') {
+  if (state == "descending") {
     diameter = lerp(diameter, start, lerpAmt);
     hueValue = lerp(hueValue, light, lerpAmt);
   }
@@ -223,5 +211,4 @@ function drawHand(hand, handState, color) {
   // Kinect location needs to be normalized to canvas size
   ellipse(hand.depthX * width, hand.depthY * height, diameter, diameter);
 }
-
 ```

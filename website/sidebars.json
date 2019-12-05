@@ -1,14 +1,16 @@
 {
   "docs": {
-    "About": [
-      "intro"],
-    "Server": ["server",
-      "server2",
-      "server3"],
-    "API": ["api", 
-      "api2"]
+    "About": ["intro"],
+    "Server": ["server", "server-azure", "server-windows"],
+    "API": ["api", "api-azure", "api-windows"]
   },
   "examples": {
-    "Examples": ["example-simple-skeleton", "example-two-player-joints", "example-key", "examples-p5-editor"]
+    "Examples": [
+      "example-simple-skeleton",
+      "example-two-player-joints",
+      "example-key",
+      "examples-p5-editor",
+      "examples-azure"
+    ]
   }
 }

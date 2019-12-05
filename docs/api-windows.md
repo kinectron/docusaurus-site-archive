@@ -1,7 +1,7 @@
 ---
-id: api2
-title: Using the Kinectron API
-sidebar_label: Kinectron API
+id: api-windows
+title: Kinect Windows: Using the Kinectron API
+sidebar_label: Kinect Windows: Kinectron API
 ---
 
 ## Using the Client-side API
@@ -9,37 +9,52 @@ sidebar_label: Kinectron API
 Include the library in the head of your document.
 
 ```
-<script src="https://cdn.jsdelivr.net/gh/kinectron/kinectron@0.2.0/client/dist/kinectron-client.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/kinectron/kinectron@0.3.0/client/dist/kinectron-client.js"></script>
 ```
 
 ### Create an Instance of Kinectron
+
 Kinectron uses a peer server to transfer Kinect data to the browser. The peer server can be accessed in three ways. See the corresponding section "The Peer Server" in "Using the Application Interface."
 
 1. Connect to localhost. By default the application creates a peer connection using peer.js on localhost at port 9001 with "kinectron" as username. This is used to connect to the application on the same computer that is running the application.
 
-  ```
-  var kinectron = new Kinectron();
-  ```
+```
+let kinectron = new Kinectron();
+```
+
 2. Connect to local network. To work with the Kinect2 data on a different computer that is on the same local network as the computer running the Kinectron application, enter the IP address displayed by the application on start.
 
-  ```
-  var kinectron = new Kinectron("172.16.242.138");
-  ```
+```
+let kinectron = new Kinectron("172.16.242.138");
+```
 
 3. Connect to personal peer network. Use your own peer server by entering your ID and server details as follows:
 
-  ```
-  var kinectron = new Kinectron("myusername", {  // enter the username to connect to
-    "host": "myserver.com", // your personal peer server
-    "port": "9001", // your portnumber
-    "path": "/", // your path
-    "secure": "true" // include parameters per peer.js documentation
-  });
-  ```
+```
+let kinectron = new Kinectron("myusername", {  // enter the username to connect to
+  "host": "myserver.com", // your personal peer server
+  "port": "9001", // your portnumber
+  "path": "/", // your path
+  "secure": "true" // include parameters per peer.js documentation
+});
+```
 
-  **Important!** In order to parse correctly, server details must be enclosed within curly brackets and properties must be within double quotes.   
+**Important!** In order to parse correctly, server details must be enclosed within curly brackets and properties must be within double quotes.
+
+### Set Kinect Type
+
+Tell Kinectron which Kinect you are using. Kinectron supports the Azure Kinect and Kinect Windows V2.
+
+```javascript
+// For Azure Kinect use "azure"
+kinectron.setKinectType("azure");
+
+// For Kinect for Windows use "windows"
+kinectron.setKinectType("windows");
+```
 
 ### Create Peer Connection
+
 Connect over the peer network.
 
 ```
@@ -88,6 +103,7 @@ The first argument is an array with the names of the desired frames. Frame names
 The second argument is an optional callback. If the callback is included, it will be executed on all the data that is being broadcast. If the callback is not set, the callback set for each frame will be called.
 
 Example with multiframe callback set.
+
 ```
   kinectron.startMultiFrame(["color", "depth", "body"], multiFrameCallback);
 
@@ -124,7 +140,6 @@ Example with individual callbacks set.
   }
 
 ```
-
 
 ### Accessing Individual Joints
 
@@ -181,6 +196,7 @@ function bodyTracked(body) {
 ```
 
 ### Stop Feed
+
 Stop the feed with the stop all function.
 
 ```
@@ -188,7 +204,9 @@ kinectron.stopAll();
 ```
 
 ### Additional Skeleton (Tracked Bodies) Functions
+
 #### Get Joints
+
 Use get joints to access the individual joints of each tracked body. Useful for drawing skeleton.
 
 ```
@@ -196,6 +214,7 @@ kinectron.getJoints(myDrawJointsFunction);
 ```
 
 #### Get Hands
+
 Get hands returns an object containing the left and right hand joints, and the left and right hand states. Hand states are 'unknown' 'notTracked' 'open' 'closed' and 'lasso'.
 
 ```
@@ -203,9 +222,11 @@ kinectron.getHands(myDrawHandsFunction);
 ```
 
 ### Recording
+
 It is possible to record from the API on both the client side and the server side.
 
 #### Server-side Recording
+
 Use startServerRecord and stopServerRecord to begin and end recording on the Kinectron server. Recording will not begin unless a feed is running. It's a good idea to attach the start and stop functions to key presses or buttons.
 
 ```
@@ -222,6 +243,7 @@ Files recorded with the server-side recording from the API will be saved automat
 The recorded file types will match those listed in [Application Recording](#recorded-file-types).
 
 #### Client-side Recording
+
 Use the startRecord and stopRecord functions to begin and end recording on the client side. Recording will not begin unless a feed is running. It's a good idea to attach startRecord and stopRecord to key presses or buttons.
 
 ```
@@ -236,6 +258,7 @@ Use the startRecord and stopRecord functions to begin and end recording on the c
 **Important!** You will be prompted to download multiple files if recording more than one stream in the browser. You may have to allow multiple downloads on the site. If you continue to have trouble, make sure that the option for "Ask where to save each file before downloading" in Chrome Advanced Settings is **unchecked.** This will by default block multiple downloads.
 
 #### Client-side Recorded File Types
+
 The recorded frames result in the following file types. These vary slighty if recording with the application. See application documentation for differences.
 
 ```

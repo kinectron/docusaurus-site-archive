@@ -6,7 +6,7 @@ sidebar_label: Skeleton Images Example (Azure Kinect)
 
 A simple sketch that draws images for bones in 2D using recorded Kinectron skeleton data. Created with [p5.js](https://p5js.org/).
 
-To use live Kinectron data, change liveData to true and enter your Kinectron IP address. Test it in the p5.js online editor [here](https://editor.p5js.org/lisajamhoury/sketches/3kjHf9e0s).
+To use live Kinectron data, change liveData to true and enter your Kinectron IP address. Test it in the p5.js online editor [here](https://editor.p5js.org/lisajamhoury/sketches/ANHl9dIZ6).
 
 ## Demo
 

@@ -1,0 +1,347 @@
+<html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Skeleton Images Example (Azure Kinect) · Kinectron</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta property="og:title" content="Skeleton Images Example (Azure Kinect) · Kinectron"/><meta property="og:type" content="website"/><meta property="og:url" content="kinectron.github.io/index.html"/><meta property="og:description" content="A simple sketch that draws images for bones in 2D using recorded Kinectron skeleton data. Created with [p5.js](https://p5js.org/)."/><link rel="shortcut icon" href="/undefined"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/scripts/p5.min.js"></script><script type="text/javascript" src="/scripts/p5.dom.min.js"></script><script type="text/javascript" src="/scripts/p5.sound.min.js"></script><script type="text/javascript" src="/scripts/kinectron.bundle.js"></script><script type="text/javascript" src="/scripts/videoToImage.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><h2 class="headerTitle">Kinectron</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li><a href="/docs/intro.html" target="_self">Documentation</a></li><li><a href="/docs/example-simple-skeleton.html" target="_self">Examples</a></li><li><a href="/en/experiments.html" target="_self">Experiments</a></li><li><a href="https://github.com/kinectron/kinectron" target="_self">Code</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Examples</span></h2></div><div class="navGroups"><div class="navGroup navGroupActive"><h3>Examples</h3><ul><li class="navListItem"><a class="navItem" href="/docs/example-simple-skeleton.html">Simple Skeleton Example (Windows Kinect)</a></li><li class="navListItem"><a class="navItem" href="/docs/example-two-player-joints.html">Two Player Joint Detection (Windows Kinect)</a></li><li class="navListItem"><a class="navItem" href="/docs/example-key.html">Key Example (Windows Kinect)</a></li><li class="navListItem"><a class="navItem" href="/docs/examples-p5-editor.html">All p5 Examples (Windows Kinect)</a></li><li class="navListItem"><a class="navItem" href="/docs/example-skeleton-images-windows.html">Skeleton Images Example (Windows Kinect)</a></li><li class="navListItem navListItemActive"><a class="navItem navItemActive" href="/docs/example-skeleton-images-azure.html">Skeleton Images Example (Azure Kinect)</a></li><li class="navListItem"><a class="navItem" href="/docs/examples-azure.html">Kinect Azure Examples</a></li></ul></div></div></section></div><script>
+          var toggler = document.getElementById('navToggler');
+          var nav = document.getElementById('docsNav');
+          toggler.onclick = function() {
+            nav.classList.toggle('docsSliderActive');
+          };
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1>Skeleton Images Example (Azure Kinect)</h1></header><article><div><span><p>A simple sketch that draws images for bones in 2D using recorded Kinectron skeleton data. Created with <a href="https://p5js.org/">p5.js</a>.</p>
+<p>To use live Kinectron data, change liveData to true and enter your Kinectron IP address. Test it in the p5.js online editor <a href="https://editor.p5js.org/lisajamhoury/sketches/3kjHf9e0s">here</a>.</p>
+<h2><a class="anchor" aria-hidden="true" name="demo"></a><a href="#demo" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Demo</h2>
+<div id="p5-sketch"></div>
+<script src="assets/scripts/example-skeleton-imgs-a.js"></script>
+<h2><a class="anchor" aria-hidden="true" name="code"></a><a href="#code" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Code</h2>
+<pre><code class="hljs css javascript"><span class="hljs-comment">// Copyright (c) 2020 Kinectron</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// This software is released under the MIT License.</span>
+<span class="hljs-comment">// https://opensource.org/licenses/MIT</span>
+
+<span class="hljs-comment">// example name:</span>
+<span class="hljs-comment">// skeletonimages</span>
+<span class="hljs-comment">// description:</span>
+<span class="hljs-comment">// example where a skeleton follows your body</span>
+<span class="hljs-comment">// this example runs by default with pre-recorded data,</span>
+<span class="hljs-comment">// and it can be switched to use live data from a kinectron server</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">//</span>
+
+<span class="hljs-comment">// set to true if using live kinectron data</span>
+<span class="hljs-keyword">const</span> liveData = <span class="hljs-literal">false</span>;
+<span class="hljs-keyword">let</span> debugKinectJoints = <span class="hljs-literal">false</span>;
+<span class="hljs-keyword">let</span> debugRotations = <span class="hljs-literal">false</span>;
+
+<span class="hljs-comment">// ip address is a string containing four numbers</span>
+<span class="hljs-comment">// each number is between 0 and 255 and separated with periods</span>
+<span class="hljs-comment">// since it is a string, it goes between double quotes</span>
+<span class="hljs-comment">// we put as example here "127.0.0.1"</span>
+<span class="hljs-comment">// replace it with the kinectron server ip address</span>
+<span class="hljs-comment">// remember to keep the double quotes</span>
+<span class="hljs-keyword">const</span> kinectronServerIPAddress = <span class="hljs-string">"127.0.0.1"</span>;
+
+<span class="hljs-keyword">const</span> skelWidth = <span class="hljs-number">0.25</span>;
+<span class="hljs-keyword">const</span> skelHeight = <span class="hljs-number">0.28</span>;
+
+<span class="hljs-comment">// variables for images</span>
+<span class="hljs-keyword">let</span> headImg;
+<span class="hljs-keyword">let</span> torsoImg;
+<span class="hljs-keyword">let</span> hipImg;
+<span class="hljs-keyword">let</span> boneImg;
+<span class="hljs-keyword">let</span> boneSmall;
+<span class="hljs-keyword">let</span> legLeftImg;
+<span class="hljs-keyword">let</span> legRightImg;
+
+<span class="hljs-comment">// recorded data variables</span>
+<span class="hljs-keyword">const</span> recorded_data_file = <span class="hljs-string">"js/azure_recorded_skeleton.json"</span>;
+<span class="hljs-comment">// initialize time variables</span>
+<span class="hljs-keyword">let</span> sentTime = <span class="hljs-built_in">Date</span>.now();
+<span class="hljs-keyword">let</span> currentFrame = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">let</span> recorded_skeleton;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">preload</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">if</span> (!liveData) {
+    recorded_skeleton = loadJSON(recorded_data_file);
+  }
+
+  <span class="hljs-comment">// images should be double desired display size to account for retina screens</span>
+  headImg = loadImage(<span class="hljs-string">"images/skull.png"</span>);
+  torsoImg = loadImage(<span class="hljs-string">"images/torso.png"</span>);
+  hipImg = loadImage(<span class="hljs-string">"images/hips.png"</span>);
+  boneImg = loadImage(<span class="hljs-string">"images/bone.png"</span>);
+  boneSmallImg = loadImage(<span class="hljs-string">"images/boneSmall.png"</span>);
+  legLeftImg = loadImage(<span class="hljs-string">"images/leftLeg.png"</span>);
+  legRightImg = loadImage(<span class="hljs-string">"images/rightLeg.png"</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setup</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// create canvas to draw on</span>
+  createCanvas(<span class="hljs-number">800</span>, <span class="hljs-number">800</span>);
+  <span class="hljs-comment">// black background</span>
+  background(<span class="hljs-number">0</span>);
+
+  <span class="hljs-comment">// print on console info about live data and pre-recorded data</span>
+  <span class="hljs-keyword">if</span> (liveData == <span class="hljs-literal">false</span>) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`this example is currently using pre-recorded data
+if you want to use live data, switch the value of variable liveData
+from false to true, setup the ip address, save the changes,
+and refresh the browser.`</span>);
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`this example is currently using live data
+if you want to use pre-recorded data, switch the value of variable liveData
+from true to false, save the changes, and refresh the browser.`</span>);
+  }
+
+  <span class="hljs-keyword">const</span> jointsCheckbox = createCheckbox(<span class="hljs-string">"Show Kinect Joints"</span>, <span class="hljs-literal">false</span>);
+  jointsCheckbox.changed(jointsChecked);
+
+  <span class="hljs-keyword">const</span> rotationsCheckbox = createCheckbox(<span class="hljs-string">"Show Joint Rotations"</span>, <span class="hljs-literal">false</span>);
+  rotationsCheckbox.changed(rotationsChecked);
+
+  <span class="hljs-keyword">if</span> (liveData) {
+    initKinectron();
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">jointsChecked</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.checked()) {
+    debugKinectJoints = <span class="hljs-literal">true</span>;
+  } <span class="hljs-keyword">else</span> {
+    debugKinectJoints = <span class="hljs-literal">false</span>;
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rotationsChecked</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.checked()) {
+    debugRotations = <span class="hljs-literal">true</span>;
+  } <span class="hljs-keyword">else</span> {
+    debugRotations = <span class="hljs-literal">false</span>;
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">draw</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">if</span> (!liveData) {
+    loopRecordedData();
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loopRecordedData</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// send recorded data every 20 seconds</span>
+  <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Date</span>.now() &gt; sentTime + <span class="hljs-number">20</span>) {
+    bodyTracked(recorded_skeleton[currentFrame]);
+    sentTime = <span class="hljs-built_in">Date</span>.now();
+
+    <span class="hljs-keyword">if</span> (currentFrame &lt; <span class="hljs-built_in">Object</span>.keys(recorded_skeleton).length - <span class="hljs-number">1</span>) {
+      currentFrame++;
+    } <span class="hljs-keyword">else</span> {
+      currentFrame = <span class="hljs-number">0</span>;
+    }
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">initKinectron</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// define and create an instance of kinectron</span>
+  <span class="hljs-keyword">const</span> kinectron = <span class="hljs-keyword">new</span> Kinectron(kinectronServerIPAddress);
+
+  <span class="hljs-comment">// connect with application over peer</span>
+  kinectron.makeConnection();
+
+  <span class="hljs-comment">// Set Kinect type to "windows" or "azure"</span>
+  kinectron.setKinectType(<span class="hljs-string">"azure"</span>);
+
+  <span class="hljs-comment">// request all tracked bodies and pass data to your callback</span>
+  kinectron.startTrackedBodies(bodyTracked);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bodyTracked</span>(<span class="hljs-params">body</span>) </span>{
+  background(<span class="hljs-number">0</span>);
+
+  <span class="hljs-comment">// get joints</span>
+  <span class="hljs-comment">// see https://docs.microsoft.com/en-us/azure/kinect-dk/body-joints</span>
+  <span class="hljs-keyword">let</span> head = calculateJointPosition(body.skeleton.joints[<span class="hljs-number">26</span>]);
+  <span class="hljs-keyword">let</span> spineShoulder = calculateJointPosition(body.skeleton.joints[<span class="hljs-number">3</span>]);
+  <span class="hljs-keyword">let</span> hip = calculateJointPosition(body.skeleton.joints[<span class="hljs-number">0</span>]);
+  <span class="hljs-keyword">let</span> hipLeft = calculateJointPosition(body.skeleton.joints[<span class="hljs-number">18</span>]);
+  <span class="hljs-keyword">let</span> hipRight = calculateJointPosition(body.skeleton.joints[<span class="hljs-number">22</span>]);
+  <span class="hljs-keyword">let</span> shoulderLeft = calculateJointPosition(body.skeleton.joints[<span class="hljs-number">5</span>]);
+  <span class="hljs-keyword">let</span> shoulderRight = calculateJointPosition(body.skeleton.joints[<span class="hljs-number">12</span>]);
+  <span class="hljs-keyword">let</span> elbowLeft = calculateJointPosition(body.skeleton.joints[<span class="hljs-number">6</span>]);
+  <span class="hljs-keyword">let</span> elbowRight = calculateJointPosition(body.skeleton.joints[<span class="hljs-number">13</span>]);
+  <span class="hljs-keyword">let</span> handLeft = calculateJointPosition(body.skeleton.joints[<span class="hljs-number">8</span>]);
+  <span class="hljs-keyword">let</span> handRight = calculateJointPosition(body.skeleton.joints[<span class="hljs-number">15</span>]);
+  <span class="hljs-keyword">let</span> ankleLeft = calculateJointPosition(body.skeleton.joints[<span class="hljs-number">20</span>]);
+  <span class="hljs-keyword">let</span> ankleRight = calculateJointPosition(body.skeleton.joints[<span class="hljs-number">24</span>]);
+
+  <span class="hljs-comment">// torso</span>
+  rotateBone(torsoImg, spineShoulder, hip, <span class="hljs-number">0</span>, <span class="hljs-number">5</span>);
+
+  <span class="hljs-comment">// head</span>
+  placeBone(headImg, head, <span class="hljs-number">0</span>, <span class="hljs-number">-30</span>);
+
+  <span class="hljs-comment">// hips</span>
+  placeBone(hipImg, hip, <span class="hljs-number">0</span>, <span class="hljs-number">-35</span>);
+
+  <span class="hljs-comment">// upper arms</span>
+  rotateBone(boneSmallImg, shoulderLeft, elbowLeft, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+  rotateBone(boneSmallImg, shoulderRight, elbowRight, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+
+  <span class="hljs-comment">// lower arms</span>
+  rotateBone(boneImg, elbowLeft, handLeft, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+  rotateBone(boneImg, elbowRight, handRight, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+
+  <span class="hljs-comment">// legs</span>
+  rotateBone(legLeftImg, hipLeft, ankleLeft, <span class="hljs-number">-20</span>, <span class="hljs-number">0</span>);
+  rotateBone(legRightImg, hipRight, ankleRight, <span class="hljs-number">20</span>, <span class="hljs-number">0</span>);
+
+  <span class="hljs-keyword">if</span> (debugKinectJoints) {
+    showKinectJoints(body);
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">calculateJointPosition</span>(<span class="hljs-params">joint</span>) </span>{
+  <span class="hljs-keyword">let</span> tempJoint = {};
+
+  <span class="hljs-comment">// cameraX and cameraY need to be scaled to the desired skeleton size with skelWidth and skelHeight</span>
+  <span class="hljs-comment">// cameraX needs to be mirrored otherwise left and right appear opposite on screen</span>
+  <span class="hljs-comment">// to mirror x, subtract x value from width over screen</span>
+  <span class="hljs-comment">// in this case width/2 is far right edge of screen because drawing is translated to 0,0 later</span>
+  <span class="hljs-comment">// then x needs to be brought back to center with -width/2</span>
+  tempJoint.cameraX = width / <span class="hljs-number">2</span> - joint.cameraX * skelWidth - width / <span class="hljs-number">2</span>;
+  tempJoint.cameraY = joint.cameraY * skelHeight;
+
+  <span class="hljs-keyword">return</span> tempJoint;
+}
+
+<span class="hljs-comment">// for bones that don't use rotation</span>
+<span class="hljs-comment">// ie. rotation for skull and hips may not be needed/desired</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">placeBone</span>(<span class="hljs-params">boneImg, joint, xOff, yOff</span>) </span>{
+  <span class="hljs-comment">// see https://p5js.org/reference/#/p5/push</span>
+  push();
+
+  <span class="hljs-comment">// move to center</span>
+  translate(width / <span class="hljs-number">2</span>, height / <span class="hljs-number">2</span>);
+
+  <span class="hljs-comment">// move to joint position</span>
+  <span class="hljs-comment">// add x offset or y offset if needed for desired positioning</span>
+  translate(joint.cameraX + xOff, joint.cameraY + yOff);
+
+  <span class="hljs-comment">// draw bone image at joint position at half image size</span>
+  image(
+    boneImg,
+    <span class="hljs-number">-0.5</span> * (boneImg.width / <span class="hljs-number">2</span>),
+    <span class="hljs-number">0</span>,
+    boneImg.width / <span class="hljs-number">2</span>,
+    boneImg.height / <span class="hljs-number">2</span>
+  );
+
+  <span class="hljs-comment">// see https://p5js.org/reference/#/p5/push</span>
+  pop();
+}
+
+<span class="hljs-comment">// for bones that use rotation</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rotateBone</span>(<span class="hljs-params">boneImg, joint1, joint2, xOff, yOff</span>) </span>{
+  <span class="hljs-comment">// use trigonometry to find the angle for the bone between two joints</span>
+  <span class="hljs-comment">// https://www.mathsisfun.com/algebra/trig-finding-angle-right-triangle.html</span>
+
+  <span class="hljs-comment">// all angles calculated in radians</span>
+
+  <span class="hljs-comment">// create three points</span>
+  <span class="hljs-keyword">let</span> v1 = createVector(joint1.cameraX, joint1.cameraY);
+  <span class="hljs-keyword">let</span> v2 = createVector(joint2.cameraX, joint2.cameraY);
+  <span class="hljs-keyword">let</span> v3 = createVector(v1.x, v2.y);
+
+  <span class="hljs-comment">// see https://p5js.org/reference/#/p5/push</span>
+  push();
+
+  <span class="hljs-comment">// move to sketch center plus desired offset if needed</span>
+  translate(width / <span class="hljs-number">2</span> + xOff, height / <span class="hljs-number">2</span> + yOff);
+
+  <span class="hljs-comment">// on debug show triangle between joints</span>
+  <span class="hljs-keyword">if</span> (debugRotations) {
+    fill(<span class="hljs-number">200</span>);
+    noStroke();
+    triangle(v1.x, v1.y, v2.x, v2.y, v3.x, v3.y);
+  }
+
+  <span class="hljs-comment">// Find the angle sin(θ) = Opposite / Hypotenuse</span>
+  <span class="hljs-keyword">let</span> hypo = v1.dist(v2);
+  <span class="hljs-keyword">let</span> oppo = v1.dist(v3);
+  <span class="hljs-keyword">let</span> angle = asin(oppo / hypo);
+
+  <span class="hljs-comment">// adjust angle for each quadrant of the circle</span>
+  <span class="hljs-keyword">let</span> adjAngle;
+
+  <span class="hljs-comment">// top left</span>
+  <span class="hljs-keyword">if</span> (
+    <span class="hljs-comment">// add width/2, height/2 to each point to compare only positive values</span>
+    v2.y + height / <span class="hljs-number">2</span> &lt; v1.y + height / <span class="hljs-number">2</span> &amp;&amp;
+    v2.x + width / <span class="hljs-number">2</span> &lt; v1.x + width / <span class="hljs-number">2</span>
+  ) {
+    adjAngle = angle - (<span class="hljs-number">3</span> * PI) / <span class="hljs-number">2</span>;
+  }
+
+  <span class="hljs-comment">// top right</span>
+  <span class="hljs-keyword">if</span> (
+    v2.y + height / <span class="hljs-number">2</span> &lt; v1.y + height / <span class="hljs-number">2</span> &amp;&amp;
+    v2.x + width / <span class="hljs-number">2</span> &gt; v1.x + width / <span class="hljs-number">2</span>
+  ) {
+    adjAngle = (<span class="hljs-number">3</span> * PI) / <span class="hljs-number">2</span> - angle;
+  }
+
+  <span class="hljs-comment">// bottom right</span>
+  <span class="hljs-keyword">if</span> (
+    v2.y + height / <span class="hljs-number">2</span> &gt; v1.y + height / <span class="hljs-number">2</span> &amp;&amp;
+    v2.x + width / <span class="hljs-number">2</span> &gt; v1.x + width / <span class="hljs-number">2</span>
+  ) {
+    adjAngle = angle - PI / <span class="hljs-number">2</span>;
+  }
+
+  <span class="hljs-comment">// bottom left</span>
+  <span class="hljs-keyword">if</span> (
+    v2.y + height / <span class="hljs-number">2</span> &gt; v1.y + height / <span class="hljs-number">2</span> &amp;&amp;
+    v2.x + width / <span class="hljs-number">2</span> &lt; v1.x + width / <span class="hljs-number">2</span>
+  ) {
+    adjAngle = <span class="hljs-number">-1</span> * (angle - PI / <span class="hljs-number">2</span>);
+  }
+
+  <span class="hljs-comment">// move to joint</span>
+  translate(v1.x, v1.y);
+
+  <span class="hljs-comment">// if debug draw line at θ = 0</span>
+  <span class="hljs-keyword">if</span> (debugRotations) {
+    stroke(<span class="hljs-number">255</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+    strokeWeight(<span class="hljs-number">5</span>);
+    line(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">100</span>, <span class="hljs-number">0</span>);
+  }
+
+  <span class="hljs-comment">// rotate by adjusted angle, draw image</span>
+  rotate(adjAngle);
+  image(
+    boneImg,
+    <span class="hljs-number">-0.5</span> * (boneImg.width / <span class="hljs-number">2</span>),
+    <span class="hljs-number">0</span>,
+    boneImg.width / <span class="hljs-number">2</span>,
+    boneImg.height / <span class="hljs-number">2</span>
+  );
+
+  <span class="hljs-comment">// see https://p5js.org/reference/#/p5/push</span>
+  pop();
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showKinectJoints</span>(<span class="hljs-params">body</span>) </span>{
+  <span class="hljs-comment">// get all the joints and draw them</span>
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> jointType <span class="hljs-keyword">in</span> body.skeleton.joints) {
+    joint = calculateJointPosition(body.skeleton.joints[jointType]);
+    drawKinectJoint(joint);
+  }
+}
+
+<span class="hljs-comment">// draw skeleton</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">drawKinectJoint</span>(<span class="hljs-params">joint</span>) </span>{
+  noStroke();
+  fill(<span class="hljs-number">100</span>);
+
+  push();
+  translate(width / <span class="hljs-number">2</span>, height / <span class="hljs-number">2</span>);
+  ellipse(joint.cameraX, joint.cameraY, <span class="hljs-number">15</span>, <span class="hljs-number">15</span>);
+  pop();
+}
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="example-skeleton-images-windows.html">← Skeleton Images Example (Windows Kinect)</a><a class="docs-next button" href="examples-azure.html">Kinect Azure Examples →</a></div></div></div></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"></a><div><h5>Docs</h5><a href="/docs/en/intro.html">About</a><a href="/docs/en/server.html">Getting Started: Server</a><a href="/docs/en/api.html">Getting Started: API</a></div><div><h5>Community</h5><a href="/en/experiments.html">User Showcase</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/kinectron/kinectron">GitHub</a><a class="github-button" href="https://github.com/kinectron/kinectron" data-icon="octicon-star" data-count-href="/kinectron/kinectron/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://tisch.nyu.edu/itp" target="_blank" class="fbOpenSource"><img src="/img/itp_logo.png" alt="ITP Home Page" width="85" height="22"/></a><section class="copyright">This project is currently maintained at <a href="https://tisch.nyu.edu/itp" target="_blank">NYU ITP</a>.</section></footer></div></body></html>

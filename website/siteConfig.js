@@ -18,7 +18,7 @@ const users = [
 const siteConfig = {
   title: "Kinectron" /* title for your website */,
   tagline: "A Realtime Peer Server for Kinect Azure and Windows",
-  url: "kinectron.github.io" /* your website url */,
+  url: "https://kinectron.github.io" /* your website url */,
   baseUrl: "/" /* base url for your project */,
   noIndex: false,
   headerLinks: [

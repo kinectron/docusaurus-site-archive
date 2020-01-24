@@ -9,7 +9,7 @@ sidebar_label: Kinect Azure: Kinectron API
 Include the library in the head of your document.
 
 ```
-<script src="https://cdn.jsdelivr.net/gh/kinectron/kinectron@0.3.0/client/dist/kinectron-client.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/kinectron/kinectron@0.3.1/client/dist/kinectron-client.js"></script>
 ```
 
 ### Create an Instance of Kinectron
@@ -128,3 +128,55 @@ Get hands returns an object containing the left and right hand joints. Unlike Ki
 ```
 kinectron.getHands(myDrawHandsFunction);
 ```
+
+### Recording
+
+It is possible to record from the API on both the client side and the server side.
+
+#### Server-side Recording
+
+Use startServerRecord and stopServerRecord to begin and end recording on the Kinectron server. Recording will not begin unless a feed is running. It's a good idea to attach the start and stop functions to key presses or buttons.
+
+```
+<html>
+  <body>
+    <button onclick="startServerRecord()">Start Record</button>
+    <button onclick="stopServerRecord()">Stop Record</button>
+  </body>
+</html>
+```
+
+Files recorded with the server-side recording from the API will be saved automatically to the home folder of the computer running the server in the "Kinectron Recordings" folder.
+
+The recorded file types will match those listed in the application recording documentation.
+
+#### Client-side Recording
+
+Use the startRecord and stopRecord functions to begin and end recording on the client side. Recording will not begin unless a feed is running. It's a good idea to attach startRecord and stopRecord to key presses or buttons.
+
+```
+<html>
+  <body>
+    <button onclick="startRecord()">Start Record</button>
+    <button onclick="stopRecord()">Stop Record</button>
+  </body>
+</html>
+```
+
+**Important!** You will be prompted to download multiple files if recording more than one stream in the browser. You may have to allow multiple downloads on the site. If you continue to have trouble, make sure that the option for "Ask where to save each file before downloading" in Chrome Advanced Settings is **unchecked.** This will by default block multiple downloads.
+
+#### Client-side Recorded File Types
+
+The recorded frames result in the following file types. These vary slighty if recording with the application. See application documentation for differences.
+
+```
+Color: webm
+Depth: webm
+Raw Depth: JSON (array data)*
+Skeleton: JSON (joint data)*
+All Bodies: JSON (joint data)*
+
+*JSON files include a timestamp on each frame.
+```
+
+Raw depth data will record, but the data is so heavy, it is not recommended to use the record function for this frame type.

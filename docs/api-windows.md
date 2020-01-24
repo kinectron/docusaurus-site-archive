@@ -9,7 +9,7 @@ sidebar_label: Kinect Windows: Kinectron API
 Include the library in the head of your document.
 
 ```
-<script src="https://cdn.jsdelivr.net/gh/kinectron/kinectron@0.3.0/client/dist/kinectron-client.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/kinectron/kinectron@0.3.1/client/dist/kinectron-client.js"></script>
 ```
 
 ### Create an Instance of Kinectron
@@ -240,7 +240,7 @@ Use startServerRecord and stopServerRecord to begin and end recording on the Kin
 
 Files recorded with the server-side recording from the API will be saved automatically to the home folder of the computer running the server in the "Kinectron Recordings" folder.
 
-The recorded file types will match those listed in [Application Recording](#recorded-file-types).
+The recorded file types will match those listed in the application recording documentation.
 
 #### Client-side Recording
 

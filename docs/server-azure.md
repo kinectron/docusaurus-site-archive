@@ -23,6 +23,32 @@ These are the single frames that are currently available:
 - "All Bodies" returns an array of all bodies tracked. For troubleshooting, Kinectron by default will draw the tracked bodies on the application interface, however, only the data is sent over the peer connection as a JSON object.
 - "Stop All" stops the current frame.
 
+### Recording
+
+The Kinectron application can record Kinect data to your desktop.
+
+#### Recording Single Frames
+
+To record a single frame, click the button corresponding to the frame that you want to record. Once the broadcast has started, click "Start Record" to begin recording. Click the button a second time "Stop Record" to end recording. The file will be saved automatically to your home folder in "Kinectron Recordings."
+
+#### Recording Multiple Frames
+
+Multiple frames are not yet supported for the Kinect Azure!
+
+To record multiple frames, start the frames you wish to record, then click "Start Record" to begin recording. Click the button a second time "Stop Record" to end recording. The files will be saved automatically to your home folder in "Kinectron Recordings."
+
+#### Recorded File Types
+
+The recorded frames result in the following file types. These vary slighty if recording with the API. See API documentation.
+
+- Color: webm
+- Depth: webm
+- Raw Depth: webm
+- Skeleton: webm (joints drawn to canvas) and JSON (joint data)\*
+- All Bodies: webm (joints drawn to canvas) and JSON (joint data)\*
+
+\*JSON files with joint data include a timestamp.
+
 ### Advanced Options
 
 #### Peer Server

@@ -57,7 +57,7 @@ const siteConfig = {
   // You may provide arbitrary config keys to be used as needed by your template.
   repoUrl: "https://github.com/kinectron/kinectron.github.io",
   projectUrl: "https://github.com/kinectron/kinectron",
-  twitterImage: "/img/azure.png"
+  twitterImage: "img/azure.png"
 };
 
 module.exports = siteConfig;

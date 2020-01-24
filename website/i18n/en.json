@@ -4,51 +4,104 @@
     "next": "Next",
     "previous": "Previous",
     "tagline": "A Realtime Peer Server for Kinect Azure and Windows",
-    "api-azure": "Kinect Azure: Using the Kinectron API",
-    "Kinect Azure: Kinectron API": "Kinect Azure: Kinectron API",
-    "api-windows": "Kinect Windows: Using the Kinectron API",
-    "Kinect Windows: Kinectron API": "Kinect Windows: Kinectron API",
-    "api": "Getting Started: API",
-    "Getting Started: API": "Getting Started: API",
-    "doc1": "Kinectron",
-    "Kinectron thingy": "Kinectron thingy",
-    "doc2": "document number 2",
-    "doc3": "This is document number 3",
-    "example-key": "Key Example (Windows Kinect)",
-    "Key Example (Windows Kinect)": "Key Example (Windows Kinect)",
-    "example-simple-skeleton": "Simple Skeleton Example (Windows Kinect)",
-    "Simple Skeleton Example (Windows Kinect)": "Simple Skeleton Example (Windows Kinect)",
-    "example-skeleton-images-azure": "Skeleton Images Example (Azure Kinect)",
-    "Skeleton Images Example (Azure Kinect)": "Skeleton Images Example (Azure Kinect)",
-    "example-skeleton-images-windows": "Skeleton Images Example (Windows Kinect)",
-    "Skeleton Images Example (Windows Kinect)": "Skeleton Images Example (Windows Kinect)",
-    "example-two-player-joints": "Two Player Single Joint Detection (Windows Kinect)",
-    "Two Player Joint Detection (Windows Kinect)": "Two Player Joint Detection (Windows Kinect)",
-    "doc4": "Other Document",
-    "doc5": "Fifth Document",
-    "examples-azure": "Kinect Azure Examples",
-    "Kinect Azure Examples": "Kinect Azure Examples",
-    "examples-p5-editor": "p5.js Examples in the Online Editor",
-    "All p5 Examples (Windows Kinect)": "All p5 Examples (Windows Kinect)",
-    "examples": "Some Examples of work",
-    "Examples": "Examples",
-    "experiments": "Experiments Built with Kinectron",
-    "Experiments": "Experiments",
-    "intro": "About Kinectron",
-    "About Kinectron": "About Kinectron",
-    "server-azure": "Kinect Azure: Using the Application Interface",
-    "Kinect Azure: Server Options": "Kinect Azure: Server Options",
-    "server-windows": "Kinect Windows: Using the Application Interface",
-    "Kinect Windows: Server Options": "Kinect Windows: Server Options",
-    "server": "Getting Started: Server",
-    "Getting Started: Server": "Getting Started: Server",
-    "server3": "Server Advanced Options",
-    "Server Advanced Options": "Server Advanced Options",
-    "Documentation": "Documentation",
-    "Code": "Code",
-    "About": "About",
-    "Server": "Server",
-    "API": "API"
+    "docs": {
+      "api-azure": {
+        "title": "Kinect Azure: Using the Kinectron API",
+        "sidebar_label": "Kinect Azure: Kinectron API"
+      },
+      "api-windows": {
+        "title": "Kinect Windows: Using the Kinectron API",
+        "sidebar_label": "Kinect Windows: Kinectron API"
+      },
+      "api": {
+        "title": "Getting Started: API",
+        "sidebar_label": "Getting Started: API"
+      },
+      "doc1": {
+        "title": "Kinectron",
+        "sidebar_label": "Kinectron thingy"
+      },
+      "doc2": {
+        "title": "document number 2"
+      },
+      "doc3": {
+        "title": "This is document number 3"
+      },
+      "example-key": {
+        "title": "Key Example (Windows Kinect)",
+        "sidebar_label": "Key Example (Windows Kinect)"
+      },
+      "example-simple-skeleton": {
+        "title": "Simple Skeleton Example (Windows Kinect)",
+        "sidebar_label": "Simple Skeleton Example (Windows Kinect)"
+      },
+      "example-skeleton-images-azure": {
+        "title": "Skeleton Images Example (Azure Kinect)",
+        "sidebar_label": "Skeleton Images Example (Azure Kinect)"
+      },
+      "example-skeleton-images-windows": {
+        "title": "Skeleton Images Example (Windows Kinect)",
+        "sidebar_label": "Skeleton Images Example (Windows Kinect)"
+      },
+      "example-two-player-joints": {
+        "title": "Two Player Single Joint Detection (Windows Kinect)",
+        "sidebar_label": "Two Player Joint Detection (Windows Kinect)"
+      },
+      "doc4": {
+        "title": "Other Document"
+      },
+      "doc5": {
+        "title": "Fifth Document"
+      },
+      "examples-azure": {
+        "title": "Kinect Azure Examples",
+        "sidebar_label": "Kinect Azure Examples"
+      },
+      "examples-p5-editor": {
+        "title": "p5.js Examples in the Online Editor",
+        "sidebar_label": "All p5 Examples (Windows Kinect)"
+      },
+      "examples": {
+        "title": "Some Examples of work",
+        "sidebar_label": "Examples"
+      },
+      "experiments": {
+        "title": "Experiments Built with Kinectron",
+        "sidebar_label": "Experiments"
+      },
+      "intro": {
+        "title": "About Kinectron",
+        "sidebar_label": "About Kinectron"
+      },
+      "server-azure": {
+        "title": "Kinect Azure: Using the Application Interface",
+        "sidebar_label": "Kinect Azure: Server Options"
+      },
+      "server-windows": {
+        "title": "Kinect Windows: Using the Application Interface",
+        "sidebar_label": "Kinect Windows: Server Options"
+      },
+      "server": {
+        "title": "Getting Started: Server",
+        "sidebar_label": "Getting Started: Server"
+      },
+      "server3": {
+        "title": "Server Advanced Options",
+        "sidebar_label": "Server Advanced Options"
+      }
+    },
+    "links": {
+      "Documentation": "Documentation",
+      "Examples": "Examples",
+      "Experiments": "Experiments",
+      "Code": "Code"
+    },
+    "categories": {
+      "About": "About",
+      "Server": "Server",
+      "API": "API",
+      "Examples": "Examples"
+    }
   },
   "pages-strings": {
     "Help Translate|recruit community translators for your project": "Help Translate",

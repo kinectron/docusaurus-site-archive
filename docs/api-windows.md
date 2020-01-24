@@ -1,6 +1,7 @@
 ---
 id: api-windows
 title: Kinect Windows: Using the Kinectron API
+description: A Realtime Peer Server for Kinect Azure and Kinect Windows. 
 sidebar_label: Kinect Windows: Kinectron API
 ---
 

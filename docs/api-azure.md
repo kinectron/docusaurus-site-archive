@@ -1,6 +1,8 @@
 ---
 id: api-azure
 title: Kinect Azure: Using the Kinectron API
+description: A Realtime Peer Server for Kinect Azure and Kinect Windows. 
+image: assets/images/azure.png
 sidebar_label: Kinect Azure: Kinectron API
 ---
 

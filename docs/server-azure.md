@@ -1,6 +1,8 @@
 ---
 id: server-azure
 title:  Kinect Azure: Using the Application Interface
+description: A Realtime Peer Server for Kinect Azure and Kinect Windows. Get started with the Kinect Azure server. 
+image: assets/images/azure.png
 sidebar_label: Kinect Azure: Server Options
 ---
 

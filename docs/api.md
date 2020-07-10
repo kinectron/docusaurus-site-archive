@@ -11,7 +11,7 @@ Once your Kinectron server is running, you need just a few lines of code to rece
 Add the following code to the head of your website.
 
 ```
-<script src="https://cdn.jsdelivr.net/gh/kinectron/kinectron@0.3.1/client/dist/kinectron-client.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/kinectron/kinectron@0.3.3/client/dist/kinectron-client.js"></script>
 ```
 
 ### 2. Create an Instance of Kinectron
@@ -98,7 +98,7 @@ index.html
       type="text/javascript"
     ></script>
     <script
-      src="https://cdn.jsdelivr.net/gh/kinectron/kinectron@0.3.0/client/dist/kinectron-client.js"
+      src="https://cdn.jsdelivr.net/gh/kinectron/kinectron@0.3.3/client/dist/kinectron-client.js"
       type="text/javascript"
     ></script>
     <script src="sketch.js" type="text/javascript"></script>

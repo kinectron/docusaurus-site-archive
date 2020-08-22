@@ -14,7 +14,7 @@ In this section we'll take a look at how to use the Kinectron server. The Kinect
 
 You will need to be running Windows 8 or Windows 10 for the app to run correctly. If you are running Windows 8, and plan to use the Kinect Windows V2, you will also need to download and install the [Official Kinect2 SDK](https://www.microsoft.com/en-us/download/details.aspx?id=44561) before running Kinectron.
 
-Download and unzip [preview release 0.3.3](https://github.com/kinectron/kinectron/releases/tag/0.3.3). Make sure you download the file that is linked from dropbox in the release description. The file will be labeled "Kinectron.xxxx.zip," you do not need the files labeled "Source Code."
+Download and unzip [preview release 0.3.4](https://github.com/kinectron/kinectron/releases/tag/0.3.4). Make sure you download the file that is linked from dropbox in the release description. The file will be labeled "Kinectron.xxxx.zip," you do not need the files labeled "Source Code."
 
 Once the file downloads, unzip the folder close to the C:\ drive level to avoid an error with Windows filename size limitations.
 
@@ -45,11 +45,23 @@ Navigate to Settings > Network & Internet > Windows Firewall > Allow an app or f
 3. Check all three boxes for Electron (Electron, Private, Public)
 4. Click Ok.
 
-### 4. Choose your Kinect
+### 4. Optional! Create A Public Address
+
+As of Kinectron version 0.3.4 you have the option to start a public address alongside your local address. The local address is an address on your local network and shows up by default. The public address exposes your Kinectron server on the public internet over https. You will use either your private or public address to connect your Kinectron client to your server.
+
+To create a public address, just click the Create Public Address button.
+
+![Screenshot](/img/server/publicaddress.png)
+
+If you're not sure what to do, don't do anything just yet. You can always create a public address later.
+
+Learn more under [Server Options: Peer Server](/docs/server-azure.html#peer-server)
+
+### 4. Choose Your Kinect
 
 As of Kinectron version 0.3.0 you must specify which Kinect you are using. Click on one of the buttons to indicate which Kinect you are using. Alternately, you can specify the Kinect you are using from the API (see API documetation).
 
-![Screenshot](/img/server/choose_kinect.png)
+![Screenshot](/img/server/choosekinect.png)
 
 ### 5. Start Broadcasting!
 

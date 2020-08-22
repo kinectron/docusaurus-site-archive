@@ -69,16 +69,20 @@ The recorded frames result in the following file types. These vary slighty if re
 
 #### Peer Server
 
-Kinectron uses a peer server to broadcast Kinect data to the browser. The peer server can be accessed in three ways:
+Kinectron uses a peer server to broadcast Kinect data to the browser. The peer server can be accessed in four ways:
 
 1. Connect on localhost. By default the application creates a peer connection using peer.js on localhost at port 9001 with "kinectron" as username. This is used to connect on the same computer.
 
 2. Connect on local network. Kinectron displays the local IP address at the top of the application. This can be used in the client-side API to connect over your local wifi network. See "Creating an Instance of Kinectron" in the API documentation.
 
-3. Connect on personal peer network. Use your own peer server by entering and submitting your ID and server details as follows:
+3. Connect on a public network. The public address exposes your Kinectron server on the public internet over https. You will use either your private or public address to connect your Kinectron client to your server. To create a public address, just click the Create Public Address button in the server application. This can be used in the client-side API to connect to your Kinectron server over the public internet using https. See [Creating an Instance of Kinectron](/docs/api-azure.html#create-an-instance-of-kinectron) in the API documentation.
+
+> A word of warning: The public address is created using [ngrok](https://ngrok.com/), which creates a secure tunnel using https to your localhost at port 9001. This is safe in theory, but could be used for malicious purposes if there are any security flaws in the Kinectron application. The one developer actively maintaining this tool has never had a problem herself, but can't gaurantee your safety. You are welcome to contribute to help keep Kinectron secure :).
+
+4. Connect on personal peer network. Use your own peer server by entering and submitting your ID and server details as follows:
 
 > Name: myname <br>
-> Server Details: {"host": "myserver.com", "port": "9000", "path": "/", "secure": "true"} <br> **Important!** In order to parse correctly, server details must be enclosed within curly brackets and properties must be in double quotes.
+> Server Details: {"host": "myserver.com", "port": "9000", "path": "/", "secure": "true"} <br><br> **Important!** In order to parse correctly, server details must be enclosed within curly brackets and properties must be in double quotes.
 
 #### Set Image Size
 

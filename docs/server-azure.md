@@ -22,6 +22,7 @@ These are the single frames that are currently available:
 - "Raw Depth" returns an array of values ranging from 0 - 3860. The values correspond to depth in millimeters. It displays a lossless webp image in the application for testing and feedback.
 - "Skeleton (Tracked Bodies)" returns all tracked bodies one at a time. It does not differentiate between tracked bodies. For troubleshooting, Kinectron by default will draw the tracked bodies on the application interface, however, only the body data is sent over the peer connection as a JSON object.
 - "All Bodies" returns an array of all bodies tracked. For troubleshooting, Kinectron by default will draw the tracked bodies on the application interface, however, only the data is sent over the peer connection as a JSON object.
+- "Key" returns a png of the image of the tracked bodies on a transparent background. It has the effect of a green screen.
 - "Stop All" stops the current frame.
 
 ### Recording
@@ -54,16 +55,20 @@ The recorded frames result in the following file types. These vary slighty if re
 
 #### Peer Server
 
-Kinectron uses a peer server to broadcast Kinect data to the browser. The peer server can be accessed in three ways:
+Kinectron uses a peer server to broadcast Kinect data to the browser. The peer server can be accessed in four ways:
 
 1. Connect on localhost. By default the application creates a peer connection using peer.js on localhost at port 9001 with "kinectron" as username. This is used to connect on the same computer.
 
 2. Connect on local network. Kinectron displays the local IP address at the top of the application. This can be used in the client-side API to connect over your local wifi network. See "Creating an Instance of Kinectron" in the API documentation.
 
-3. Connect on personal peer network. Use your own peer server by entering and submitting your ID and server details as follows:
+3. Connect on a public network. The public address exposes your Kinectron server on the public internet over https. You will use either your private or public address to connect your Kinectron client to your server. To create a public address, just click the Create Public Address button in the server application. This can be used in the client-side API to connect to your Kinectron server over the public internet using https. See [Creating an Instance of Kinectron](/docs/api-azure.html#create-an-instance-of-kinectron) in the API documentation.
+
+> A word of warning: The public address is created using [ngrok](https://ngrok.com/), which creates a secure tunnel using https to your localhost at port 9001. This is safe in theory, but could be used for malicious purposes if there are any security flaws in the Kinectron application. The one developer actively maintaining this tool has never had a problem herself, but can't gaurantee your safety. You are welcome to contribute to help keep Kinectron secure :).
+
+4. Connect on personal peer network. Use your own peer server by entering and submitting your ID and server details as follows:
 
 > Name: myname <br>
-> Server Details: {"host": "myserver.com", "port": "9000", "path": "/", "secure": "true"} <br> **Important!** In order to parse correctly, server details must be enclosed within curly brackets and properties must be in double quotes.
+> Server Details: {"host": "myserver.com", "port": "9000", "path": "/", "secure": "true"} <br><br> **Important!** In order to parse correctly, server details must be enclosed within curly brackets and properties must be in double quotes.
 
 #### Image Size
 

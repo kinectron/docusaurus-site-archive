@@ -11,21 +11,31 @@ Once your Kinectron server is running, you need just a few lines of code to rece
 Add the following code to the head of your website.
 
 ```
-<script src="https://cdn.jsdelivr.net/gh/kinectron/kinectron@0.3.3/client/dist/kinectron-client.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/kinectron/kinectron@0.3.4/client/dist/kinectron-client.js"></script>
 ```
 
 ### 2. Create an Instance of Kinectron
 
-Kinectron uses a peer server to transfer Kinect data to the browser. The peer server can be accessed in over a computer's localhost, over a local network, and on the public internet. For now, we'll connect to the server over a local network. This works with any computer that is on the same network (for example, any computer on your home wifi network).
+Kinectron uses a peer server to transfer Kinect data to the browser. The peer server can be accessed over a computer's localhost, over a local network, or on the public internet. For now, we'll connect to the server over a local network. This works with any computer that is on the same network (for example, any computer on your home wifi network).
 
 Find your IP address on your Kinectron server. It is printed at the top of your Kinectron server with orange highlighting.
 
-![Kinectron IP](/img/server/ip.jpg)
+![Kinectron IP local](/img/server/chooseiplocal.png)
 
 Use the following code with the IP address from your Kinectron server.
 
 ```
-let kinectron = new Kinectron("10.0.1.5"); // Add Kinectron IP address here
+let kinectron = new Kinectron("192.168.68.118"); // Add Kinectron loca address here
+```
+
+If you're working with the [p5 Web Editor](https://editor.p5js.org/), or want to share your server on the public internet, you will need a public address. After you press "Create Public Address" on your server application, you will see a public address appear.
+
+![Kinectron IP public](/img/server/chooseippublic.png)
+
+Use this instead of your local address, as follows:
+
+```
+let kinectron = new Kinectron("46b028e5c8ec.ngrok.io"); // Add Kinectron public address here
 ```
 
 ### 3. Set Kinect Type

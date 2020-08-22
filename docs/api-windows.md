@@ -15,7 +15,7 @@ Include the library in the head of your document.
 
 ### Create an Instance of Kinectron
 
-Kinectron uses a peer server to transfer Kinect data to the browser. The peer server can be accessed in three ways. See the corresponding section "The Peer Server" in "Using the Application Interface."
+Kinectron uses a peer server to transfer Kinect data to the browser. The peer server can be accessed in four ways. See the corresponding section "The Peer Server" in "Using the Application Interface."
 
 1. Connect to localhost. By default the application creates a peer connection using peer.js on localhost at port 9001 with "kinectron" as username. This is used to connect to the application on the same computer that is running the application.
 
@@ -23,13 +23,19 @@ Kinectron uses a peer server to transfer Kinect data to the browser. The peer se
 let kinectron = new Kinectron();
 ```
 
-2. Connect to local network. To work with the Kinect2 data on a different computer that is on the same local network as the computer running the Kinectron application, enter the IP address displayed by the application on start.
+2. Connect to local network. To work with the Kinect data on a different computer that is on the same local network as the computer running the Kinectron application, enter the IP address displayed by the application on start.
 
 ```
 let kinectron = new Kinectron("172.16.242.138");
 ```
 
-3. Connect to personal peer network. Use your own peer server by entering your ID and server details as follows:
+3. Connect to public network. The public address exposes your Kinectron server on the public internet over https. To create a public address, just click the Create Public Address button in the server application (this cannot be done by the client). Then, enter the public address displayed by your Kinectron server when you create an instance of Kinectron. The public address will look something like: "hrmhadfajkl432.ngrok.io".
+
+```javascript
+let kinectron = new Kinectron("hrmhadfajkl432.ngrok.io");
+```
+
+4. Connect to personal peer network. Use your own peer server by entering your ID and server details as follows:
 
 ```
 let kinectron = new Kinectron("myusername", {  // enter the username to connect to

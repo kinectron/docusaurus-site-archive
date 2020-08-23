@@ -55,7 +55,7 @@ The recorded frames result in the following file types. These vary slighty if re
 
 #### Peer Server
 
-Kinectron uses a peer server to broadcast Kinect data to the browser. The peer server can be accessed in four ways:
+Kinectron uses a peer server to establish a connection between the server and the browser. The peer server can be accessed in four ways:
 
 1. Connect on localhost. By default the application creates a peer connection using peer.js on localhost at port 9001 with "kinectron" as username. This is used to connect on the same computer.
 

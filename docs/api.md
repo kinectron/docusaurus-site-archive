@@ -16,7 +16,7 @@ Add the following code to the head of your website.
 
 ### 2. Create an Instance of Kinectron
 
-Kinectron uses a peer server to transfer Kinect data to the browser. The peer server can be accessed over a computer's localhost, over a local network, or on the public internet. For now, we'll connect to the server over a local network. This works with any computer that is on the same network (for example, any computer on your home wifi network).
+Kinectron uses a peer server to establish a connection between the server and the browser. The peer server can be accessed over a computer's localhost, over a local network, or on the public internet. For now, we'll connect to the server over a local network. This works with any computer that is on the same network (for example, any computer on your home wifi network).
 
 Find your IP address on your Kinectron server. It is printed at the top of your Kinectron server with orange highlighting.
 
@@ -28,7 +28,7 @@ Use the following code with the IP address from your Kinectron server.
 let kinectron = new Kinectron("192.168.68.118"); // Add Kinectron loca address here
 ```
 
-If you're working with the [p5 Web Editor](https://editor.p5js.org/), or want to share your server on the public internet, you will need a public address. After you press "Create Public Address" on your server application, you will see a public address appear.
+If you're working with the [p5 Web Editor](https://editor.p5js.org/), or want to share your server on the public internet, you will need a public https address. After you press "Create Public Address" on your server application, you will see a public address appear.
 
 ![Kinectron IP public](/img/server/chooseippublic.png)
 

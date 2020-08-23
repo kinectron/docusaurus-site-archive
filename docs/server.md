@@ -57,13 +57,13 @@ If you're not sure what to do, don't do anything just yet. You can always create
 
 Learn more under [Server Options: Peer Server](/docs/server-azure.html#peer-server)
 
-### 4. Choose Your Kinect
+### 5. Choose Your Kinect
 
 As of Kinectron version 0.3.0 you must specify which Kinect you are using. Click on one of the buttons to indicate which Kinect you are using. Alternately, you can specify the Kinect you are using from the API (see API documetation).
 
 ![Screenshot](/img/server/choosekinect.png)
 
-### 5. Start Broadcasting!
+### 6. Start Broadcasting!
 
 Click on one of the buttons (ie. "Depth") to begin broadcasting a feed. You will see the image appear on the screen.
 

@@ -59,7 +59,7 @@
 <pre><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/gh/kinectron/kinectron@0.3.3/client/dist/kinectron-client.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="create-an-instance-of-kinectron"></a><a href="#create-an-instance-of-kinectron" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create an Instance of Kinectron</h3>
-<p>Kinectron uses a peer server to transfer Kinect data to the browser. The peer server can be accessed in four ways. See the corresponding section &quot;The Peer Server&quot; in &quot;Using the Application Interface.&quot;</p>
+<p>Kinectron uses a peer server to establish a connection between the server and the browser. The peer server can be accessed in four ways. See the corresponding section &quot;The Peer Server&quot; in &quot;Using the Application Interface.&quot;</p>
 <ol>
 <li>Connect to localhost. By default the application creates a peer connection using peer.js on localhost at port 9001 with &quot;kinectron&quot; as username. This is used to connect to the application on the same computer that is running the application.</li>
 </ol>
@@ -71,9 +71,9 @@
 <pre><code class="hljs"><span class="hljs-keyword">let</span> kinectron = <span class="hljs-keyword">new</span> <span class="hljs-constructor">Kinectron(<span class="hljs-string">"172.16.242.138"</span>)</span>;
 </code></pre>
 <ol start="3">
-<li>Connect to public network. The public address exposes your Kinectron server on the public internet over https. To create a public address, just click the Create Public Address button in the server application (this cannot be done by the client). Then, enter the public address displayed by your Kinectron server when you create an instance of Kinectron. The public address will look something like: &quot;hrmhadfajkl432.ngrok.io&quot;.</li>
+<li>Connect to public network. The public address exposes your Kinectron server on the public internet over https. To create a public address, just click the Create Public Address button in the server application (this cannot be done by the client). Then, enter the public address displayed by your Kinectron server when you create an instance of Kinectron. The public address will look something like: &quot;46b028e5c8ec.ngrok.io&quot;.</li>
 </ol>
-<pre><code class="hljs css language-javascript"><span class="hljs-keyword">let</span> kinectron = <span class="hljs-keyword">new</span> Kinectron(<span class="hljs-string">"hrmhadfajkl432.ngrok.io"</span>);
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">let</span> kinectron = <span class="hljs-keyword">new</span> Kinectron(<span class="hljs-string">"46b028e5c8ec.ngrok.io"</span>);
 </code></pre>
 <ol start="4">
 <li>Connect to personal peer network. Use your own peer server by entering your ID and server details as follows:</li>
